@@ -134,7 +134,7 @@
                         <td><img src="../img/halaman/<?php echo $a['gambar_halaman'];?>" width="100"></td>
                         <td><?php echo $a['tanggalpost_halaman']?></td>
                         <td><?php echo $sub_kalimat = substr($a['konten_halaman'],0,30)."...";?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_halaman'];?>">Update</a>   <a href="../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete" class="badge badge-danger">Delete</a>    <a href="#" class="badge badge-success">Detail</a></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_halaman'];?>">Update</a>   <a href="../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete&gambar=<?php echo $a['gambar_halaman'];?>" class="badge badge-danger">Delete</a>    <a href="#" class="badge badge-success">Detail</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>
@@ -163,9 +163,15 @@
               </button>
             </div>
             <div class="modal-body">
-               <form action="../modal/modalHalaman.php" method="post">
+               <form action="../modal/modalHalaman.php" method="post" enctype="multipart/form-data">
                   <div class="card-body">
                     <input type="hidden" name="id" value="<?php echo $b['id_halaman'];?>">
+                    <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_halaman'];?>">
+                    <div class="mb-3">
+                      <label for="formFile">File Gambar</label> <br>
+                      <img src="../img/halaman/<?php echo $b['gambar_halaman'];?>" width="200">
+                      <input class="form-control" type="file" id="formFile" name="gambar">
+                    </div>
                     <div class="mb-3">
                       <label>Judul Halaman</label>
                       <input type="input" class="form-control" name="judul" value="<?php echo $b['judul_halaman'];?>" required>
