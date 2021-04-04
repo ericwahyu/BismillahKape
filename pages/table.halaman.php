@@ -77,21 +77,21 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file-alt"></i> <span>Form</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="form.kategoriberita.html">Form Kategori Berita</a></li>
-                  <li><a class="nav-link" href="form.kategorigallery.html">Form Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="form.berita.html">Form Berita</a></li>
-                  <li><a class="nav-link" href="form.gallery.html">Form Gallery</a></li>
-                  <li><a class="nav-link" href="form.halaman.html">Form Halaman</a></li>
+                  <li><a class="nav-link" href="form.kategoriberita.php">Form Kategori Berita</a></li>
+                  <li><a class="nav-link" href="form.kategorigallery.php">Form Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="form.berita.php">Form Berita</a></li>
+                  <li><a class="nav-link" href="form.gallery.php">Form Gallery</a></li>
+                  <li><a class="nav-link" href="form.halaman.php">Form Halaman</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="table.kategoriberita.html">Table Kategori Berita</a></li>
-                  <li><a class="nav-link" href="table.kategorigallery.html">Table Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.berita.html">Table Berita</a></li>
-                  <li><a class="nav-link" href="table.gallery.html">Table Gallery</a></li>
-                  <li class="active"><a class="nav-link" href="table.halaman.html">Table Halaman</a></li>
+                  <li><a class="nav-link" href="table.kategoriberita.php">Table Kategori Berita</a></li>
+                  <li><a class="nav-link" href="table.kategorigallery.php">Table Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="table.berita.php">Table Berita</a></li>
+                  <li><a class="nav-link" href="table.gallery.php">Table Gallery</a></li>
+                  <li class="active"><a class="nav-link" href="table.halaman.php">Table Halaman</a></li>
                 </ul>
               </li>
               <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
@@ -121,32 +121,23 @@
                         <th>Konten Halaman</th>
                         <th>Action</th>
                       </tr>
+                      <?php
+                        include "../modal/koneksi.php";
+
+                        $view = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
+                        $index=1;
+                        while($a = mysqli_fetch_array($view)):
+                      ?>
                       <tr>
-                        <td>1</td>
-                        <td>Irwansyah Saputra</td>
-                        <td>2017-01-09</td>
-                        <td>Active</td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal">Update</a>   <a href="#" class="badge badge-danger" data-confirm="Cius nih?|Anda akan menghapus data ini?" data-confirm-yes="alert('Data Terhapus:(');"">Delete</a></td>
+                        <td><?php echo $index;?></td>
+                        <td><?php echo $a['judul_halaman'];?></td>
+                        <td><?php echo $a['tanggalpost_halaman']?></td>
+                        <td><?php echo $sub_kalimat = substr($a['konten_halaman'],0,30)."...";?></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal">Update</a>   <a href="#" class="badge badge-danger">Delete</a>    <a href="#" class="badge badge-success">Detail</a></td>
                       </tr>
+                      <?php $index++; endwhile;?>
                     </table>
                   </div>
-                </div>
-                <div class="card-footer text-right">
-                  <nav class="d-inline-block">
-                    <ul class="pagination mb-0">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                      </li>
-                      <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                      </li>
-                    </ul>
-                  </nav>
                 </div>
               </div>
             </div>

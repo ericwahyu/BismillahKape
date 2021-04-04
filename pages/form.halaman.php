@@ -77,21 +77,21 @@
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file-alt"></i> <span>Form</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="form.kategoriberita.html">Form Kategori Berita</a></li>
-                  <li><a class="nav-link" href="form.kategorigallery.html">Form Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="form.berita.html">Form Berita</a></li>
-                  <li><a class="nav-link" href="form.gallery.html">Form Gallery</a></li>
-                  <li class="active"><a class="nav-link" href="form.halaman.html">Form Halaman</a></li>
+                  <li><a class="nav-link" href="form.kategoriberita.php">Form Kategori Berita</a></li>
+                  <li><a class="nav-link" href="form.kategorigallery.php">Form Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="form.berita.php">Form Berita</a></li>
+                  <li><a class="nav-link" href="form.gallery.php">Form Gallery</a></li>
+                  <li class="active"><a class="nav-link" href="form.halaman.php">Form Halaman</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="table.kategoriberita.html">Table Kategori Berita</a></li>
-                  <li><a class="nav-link" href="table.kategorigallery.html">Table Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.berita.html">Table Berita</a></li>
-                  <li><a class="nav-link" href="table.gallery.html">Table Gallery</a></li>
-                  <li><a class="nav-link" href="table.halaman.html">Table Halaman</a></li>
+                  <li><a class="nav-link" href="table.kategoriberita.php">Table Kategori Berita</a></li>
+                  <li><a class="nav-link" href="table.kategorigallery.php">Table Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="table.berita.php">Table Berita</a></li>
+                  <li><a class="nav-link" href="table.gallery.php">Table Gallery</a></li>
+                  <li><a class="nav-link" href="table.halaman.php">Table Halaman</a></li>
                 </ul>
               </li>
               <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
@@ -108,33 +108,33 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="#" method="post">
+                <form action="../modal/modalHalaman.php" method="post">
                   <div class="card-header">
                     <h4>Insert Halaman</h4>
                   </div>
                   <div class="card-body">
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label>Pilih File Gambar</label>
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                       </div>
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label>Judul Halaman</label>
-                      <input type="input" class="form-control" placeholder="Masukkan Judul Halaman" required>
+                      <input type="input" class="form-control" name="judul" placeholder="Masukkan Judul Halaman" required>
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label>Tanggal Post Halaman</label>
-                      <input type="date" class="form-control" required>
+                      <input type="date" class="form-control" name="tanggal" required>
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label>Konten Halaman</label>
                       <textarea class="form-control ckeditor" name="konten"></textarea required>
                     </div>
                   </div>
-                  <div class="card-footer text-right">
-                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                  <div class="card-footer text-right bg-whitesmoke br">
+                    <button class="btn btn-primary mr-1" type="submit" name="insert">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>
                   </div>
                 </form>
