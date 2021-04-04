@@ -21,7 +21,7 @@
             header("Location:../pages/table.gallery.php");
         }
 
-    }else if(isset($_GET['perintah'])){
+    }else if(isset($_GET['delete'])){
         $id = $_GET['id'];
 
         $hapus = mysqli_query($koneksi,"DELETE FROM GALLERY WHERE id_gallery = '$id'");

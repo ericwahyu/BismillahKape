@@ -9,7 +9,8 @@
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 
-  <link rel="stylesheet" href="../assets/css/bootsrap.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap1.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap2.min.css">
   <link rel="stylesheet" href="../assets/fontawesome-free-5.15.3-web/css/all.css">
 
   <!-- CSS Libraries -->
@@ -108,25 +109,22 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="../modal/modalHalaman.php" method="post">
+                <form action="../modal/modalHalaman.php" method="post" enctype="multipart/form-data">
                   <div class="card-header">
                     <h4>Insert Halaman</h4>
                   </div>
                   <div class="card-body">
                     <div class="mb-3">
-                      <label>Pilih File Gambar</label>
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                      </div>
+                      <label for="formFile">Pilih File Gambar</label>
+                      <input class="form-control" type="file" id="formFile" name="gambar">
                     </div>
                     <div class="mb-3">
-                      <label>Judul Halaman</label>
-                      <input type="input" class="form-control" name="judul" placeholder="Masukkan Judul Halaman" required>
+                      <label for="judul">Judul Halaman</label>
+                      <input type="input" class="form-control" name="judul" placeholder="Masukkan Judul Halaman" id="judul" required>
                     </div>
                     <div class="mb-3">
-                      <label>Tanggal Post Halaman</label>
-                      <input type="date" class="form-control" name="tanggal" required>
+                      <label for="tanggal">Tanggal Post Halaman</label>
+                      <input type="date" class="form-control" name="tanggal" id="tanggal" required>
                     </div>
                     <div class="mb-3">
                       <label>Konten Halaman</label>

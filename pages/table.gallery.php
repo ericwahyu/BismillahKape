@@ -132,7 +132,7 @@
                         <td><?php echo $sub_kalimat = substr($a['nama_kategori_gallery'],0,45)."...";?></td>
                         <td><?php echo $sub_kalimat = substr($a['caption_gallery'],0,45)."...";?></td>
                         <td><?php echo $a['tanggal_gallery']?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal">Update</a>   <a href="#" class="badge badge-danger">Delete</a>  <a href="#" class="badge badge-success">Detail</a></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal">Update</a>   <a href="../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete" class="badge badge-danger">Delete</a>  <a href="#" class="badge badge-success">Detail</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>

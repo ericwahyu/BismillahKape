@@ -131,9 +131,10 @@
                       <tr>
                         <td><?php echo $index;?></td>
                         <td><?php echo $a['judul_halaman'];?></td>
+                        <td><img src="../img/halaman/<?php echo $a['gambar_halaman'];?>" width="100"></td>
                         <td><?php echo $a['tanggalpost_halaman']?></td>
                         <td><?php echo $sub_kalimat = substr($a['konten_halaman'],0,30)."...";?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal">Update</a>   <a href="#" class="badge badge-danger">Delete</a>    <a href="#" class="badge badge-success">Detail</a></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_halaman'];?>">Update</a>   <a href="../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete" class="badge badge-danger">Delete</a>    <a href="#" class="badge badge-success">Detail</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>
@@ -148,7 +149,11 @@
         </section>
       </div>
 
-      <div class="modal fade " tabindex="-1" role="dialog" id="exampleModal">
+      <?php
+        $select = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
+        while($b = mysqli_fetch_array($select)):
+      ?>
+      <div class="modal fade " tabindex="-1" role="dialog" id="exampleModal<?php echo $b['id_halaman'];?>">
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -158,30 +163,32 @@
               </button>
             </div>
             <div class="modal-body">
-               <form action="#" method="post">
+               <form action="../modal/modalHalaman.php" method="post">
                   <div class="card-body">
-                    <div class="form-group">
+                    <input type="hidden" name="id" value="<?php echo $b['id_halaman'];?>">
+                    <div class="mb-3">
                       <label>Judul Halaman</label>
-                      <input type="input" class="form-control" placeholder="Masukkan Judul Halaman" required>
+                      <input type="input" class="form-control" name="judul" value="<?php echo $b['judul_halaman'];?>" required>
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label>Tanggal Post Halaman</label>
-                      <input type="date" class="form-control" required>
+                      <input type="date" class="form-control" name="tanggal" value="<?php echo $b['tanggalpost_halaman'];?>" required>
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label>Konten Halaman</label>
-                      <textarea class="form-control ckeditor" name="konten"></textarea required>
+                      <textarea class="form-control ckeditor" name="konten" ><?php echo $b['konten_halaman'];?></textarea required>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  <button type="submit" class="btn btn-primary" name="update">Save changes</button>
                 </div>
               </form>
           </div>
         </div>
       </div>
+      <?php endwhile;?>
 
       <footer class="main-footer">
         <div class="footer-left">
