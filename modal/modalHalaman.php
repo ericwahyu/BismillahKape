@@ -1,28 +1,30 @@
 <?php
     include "koneksi.php";
 
-    //ekstensi gambar
-    $gambarName = $_FILES['gambar']['name'];
-    $gambarType = $_FILES['gambar']['type'];
-    $gambarError = $_FILES['gambar']['error'];
-    $gambarTmp = $_FILES['gambar']['tmp_name'];
-
     if(isset($_POST['insert'])){
-        //ekstensi inputan
+        //ekstensi file
+        $gambarName = $_FILES['gambar']['name'];
+        $gambarType = $_FILES['gambar']['type'];
+        $gambarError = $_FILES['gambar']['error'];
+        $gambarTmp = $_FILES['gambar']['tmp_name'];
+
+        //ekstensi post
         $judul = $_POST['judul'];
         $tanggal = $_POST['tanggal'];
         $konten = $_POST['konten'];
 
         // pengecekan file
         if($gambarError == 4){
-            // echo "<script>
-            //         alert('pilih file gambar terlebih dahulu !');
-            //         document.location.herf = '../pages/form.halaman.php';
-            //       </script>";
-            header("Location:../pages/form.halaman.php");
+            //notif
+            echo "<script>
+                  alert('Silahkan pilih file gambar terlebih dahulu !'); window.location='../pages/form.halaman.php ';
+                </script>";
             return false;
         }else if($gambarType != "image/png" and $gambarType != "image/jpeg"){
-            header("Location:../pages/form.halaman.php");
+            //notif
+            echo "<script>
+                  alert('Yang anda upload bukan file gambar !'); window.location='../pages/form.halaman.php ';
+                </script>";
             return false;
         // lolos pengecekan file gambar
         }else{
@@ -35,33 +37,42 @@
             move_uploaded_file($gambarTmp,'../img/halaman/'.$gambarNamenew);
             $input = mysqli_query($koneksi,"INSERT INTO HALAMAN VALUES ('', '$gambarNamenew','$judul', '$tanggal', '$konten')");
                 if($input){
-                    header("Location:../pages/table.halaman.php");
+                    header("Location:../pages/table.halaman.php?berhasil");
                 }
         }
     }else if(isset($_POST['update'])){
+        //ekstensi file baru
+        $gambarName = $_FILES['gambar']['name'];
+        $gambarType = $_FILES['gambar']['type'];
+        $gambarError = $_FILES['gambar']['error'];
+        $gambarTmp = $_FILES['gambar']['tmp_name'];
+
+        //ekstensi post
         $id = $_POST['id'];
         $judul = $_POST['judul'];
         $tanggal = $_POST['tanggal'];
         $konten = $_POST['konten'];
 
-        if($_FILES['gambar']['error'] == 4){
-            $gambarNamenew = $_POST['gambarlama'];
+        //ekstensi file lama
+        $gambarLama = $_POST['gambarlama'];
+
+        if($gambarError == 4){
+            $gambarNamenew = $gambarLama;
+        }else if($gambarType != "image/png" and $gambarType != "image/jpeg"){
+            echo "<script>
+                  alert('Yang anda upload bukan file gambar !'); window.location='../pages/table.halaman.php ';
+                </script>";
+            return false;
+        // lolos pengecekan file gambar
         }else{
-            if($gambarType != "image/png" and $gambarType != "image/jpeg"){
-                header("Location:../pages/table.halaman.php");
-                return false;
-            // lolos pengecekan file gambar
-            }else{
-                //hapus gambar lama
-                $gambarLama = $_POST['gambarlama'];
-                $gambar = glob('../img/halaman/*');
-                foreach($gambar as $gam){
-                    if($gam == "../img/halaman/$gambarLama"){
-                    unlink($gam);
-                    }
+            //hapus gambar lama
+            $gambar = glob('../img/halaman/*');
+            foreach($gambar as $gam){
+                if($gam == "../img/halaman/$gambarLama"){
+                unlink($gam);
                 }
             }
-            $gambarName = $_FILES['gambar']['name'];
+            //nama file unik gambar
             $gambarNamenew = uniqid();
             $gambarNamenew .= '.';
             $gambarNamenew .= $gambarName;
@@ -71,26 +82,30 @@
         move_uploaded_file($gambarTmp,'../img/halaman/'.$gambarNamenew);
         $edit = mysqli_query($koneksi,"UPDATE HALAMAN SET gambar_halaman='$gambarNamenew', judul_halaman='$judul', tanggalpost_halaman='$tanggal', konten_halaman='$konten' WHERE id_halaman='$id'");
             if($edit){
-            header("Location:../pages/table.halaman.php");
+              echo "<script>
+                alert('Data berhasil terupdate !'); window.location='../pages/table.halaman.php ';
+              </script>";
         }
 
     }else if(isset($_GET['delete'])){
+        //ekstensi post
         $id = $_GET['id'];
-        $gambarNamenew = $_GET['gambar'];
+
+        //ekstensi file lama
+        $gambarLama = $_GET['gambarlama'];
+
         //file hapus gambar
         $gambar = glob('../img/halaman/*');
         foreach($gambar as $gam){
-            if($gam == "../img/halaman/$gambarNamenew"){
+            if($gam == "../img/halaman/$gambarLama"){
                unlink($gam);
-               echo "lolos";
+               //hapus database
+               $hapus = mysqli_query($koneksi,"DELETE FROM HALAMAN WHERE id_halaman = '$id'");
+               if($hapus){
+                   header("Location:../pages/table.halaman.php");
+               }
             }
         }
-        //hapus database
-        $hapus = mysqli_query($koneksi,"DELETE FROM HALAMAN WHERE id_halaman = '$id'");
-        if($hapus){
-            header("Location:../pages/table.halaman.php");
-        }
-
     }
 
 ?>

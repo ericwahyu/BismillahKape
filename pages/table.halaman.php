@@ -6,10 +6,11 @@
   <title>Admin Laboratorium Rekayasa Perangkat Lunak</title>
 
   <!-- General CSS Files -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 
-  <link rel="stylesheet" href="../assets/css/bootsrap.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap1.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap2.min.css">
   <link rel="stylesheet" href="../assets/fontawesome-free-5.15.3-web/css/all.css">
 
   <!-- CSS Libraries -->
@@ -98,6 +99,15 @@
         </aside>
       </div>
 
+      <!-- notif -->
+      <?php
+        if(isset($_GET['berhasil'])){
+          echo "<script>
+                  alert('Data berhasil di tambahkan :)')
+                </script>";
+        }
+      ?>
+
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
@@ -113,10 +123,11 @@
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-bordered table-md">
+                    <table class="table table-hover table-bordered">
                       <tr>
                         <th>#</th>
                         <th>Judul Halaman</th>
+                        <th>Gambar Halaman</th>
                         <th>Tanggal Post Halaman</th>
                         <th>Konten Halaman</th>
                         <th>Action</th>
@@ -130,11 +141,11 @@
                       ?>
                       <tr>
                         <td><?php echo $index;?></td>
-                        <td><?php echo $a['judul_halaman'];?></td>
+                        <td><?php echo $sub_kalimat = substr($a['judul_halaman'],0,30)."...";?></td>
                         <td><img src="../img/halaman/<?php echo $a['gambar_halaman'];?>" width="100"></td>
                         <td><?php echo $a['tanggalpost_halaman']?></td>
                         <td><?php echo $sub_kalimat = substr($a['konten_halaman'],0,30)."...";?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_halaman'];?>">Update</a>   <a href="../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete&gambar=<?php echo $a['gambar_halaman'];?>" class="badge badge-danger">Delete</a>    <a href="#" class="badge badge-success">Detail</a></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_halaman'];?>">Update</a>   <a href="#" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete&gambarlama=<?php echo $a['gambar_halaman'];?>'" class="badge badge-danger">Delete</a>    <a href="#" class="badge badge-success">Detail</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>

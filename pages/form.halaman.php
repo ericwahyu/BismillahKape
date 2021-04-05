@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
