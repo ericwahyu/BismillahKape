@@ -119,6 +119,7 @@
                         <th>#</th>
                         <th>Nama Kategori Gallery</th>
                         <th>Caption Gallery</th>
+                        <th>Gambar Gallery</th>
                         <th>Tanggal Gallery</th>
                         <th>Action</th>
                       </tr>
@@ -132,8 +133,9 @@
                         <td><?php echo $index?></td>
                         <td><?php echo $sub_kalimat = substr($a['nama_kategori_gallery'],0,45)."...";?></td>
                         <td><?php echo $sub_kalimat = substr($a['caption_gallery'],0,45)."...";?></td>
+                        <td><img src="../img/gallery/<?php echo $a['gambar_gallery'];?>" width="100"></td>
                         <td><?php echo $a['tanggal_gallery']?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#exampleModal">Update</a>   <a href="../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete" class="badge badge-danger">Delete</a>  <a href="#" class="badge badge-success">Detail</a></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>">Update</a>  <a href="#" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'" class="badge badge-danger">Delete</a>  <a href="#" class="badge badge-success">Detail</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>
@@ -148,45 +150,58 @@
         </section>
       </div>
 
-      <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
-        <div class="modal-dialog modal-xl" role="document">
+      <?php
+        $select= mysqli_query($koneksi, "SELECT * FROM GALLERY JOIN KATEGORI_GALLERY ON GALLERY.id_kategori_gallery = KATEGORI_GALLERY.id_kategori_gallery");
+        while($b = mysqli_fetch_array($select)):
+      ?>
+      <div class="modal fade" id="modalupdate<?php echo $b['id_gallery'];?>" tabindex="-1">
+        <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Update Gallery</h5>
+              <h5 class="modal-title">Update Kategori Berita</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-               <form action="#" method="post">
-                  <div class="card-body">
-                    <div class="form-group">
-                      <label>Nama Kategori Gallery</label>
-                      <select class="form-control">
-                        <option selected>-- Pilih Kategori Gallery --</option required>
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label>Caption Gallery</label>
-                      <input type="input" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                      <label>Tanggal Post Gallery</label>
-                      <input type="date" class="form-control" required>
-                    </div>
-                  </div>
+              <form action="../modal/modalGallery.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php echo $b['id_gallery']?>">
+                <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_gallery'];?>">
+                <div class="mb-3">
+                  <label for="formFile">File Gambar</label> <br>
+                  <img src="../img/gallery/<?php echo $b['gambar_gallery'];?>" width="200">
+                  <input class="form-control" type="file" id="formFile" name="gambar">
                 </div>
-                <div class="modal-footer bg-whitesmoke">
+                <div class="mb-3">
+                  <label>Nama Kategori Gallery</label>
+                  <select class="form-control" name="idkategori">
+                    <option selected value="<?php echo $b['id_kategori_gallery'];?>"><?php echo $b['nama_kategori_gallery'];?></option required>
+                    <?php
+                      $idkategori= mysqli_query($koneksi, "SELECT * FROM KATEGORI_GALLERY");
+                      while($c = mysqli_fetch_array($idkategori)):
+                    ?>
+                    <option value="<?php echo $c['id_kategori_gallery'];?>"><?php echo $c['nama_kategori_gallery'];?></option>
+                    <?php endwhile;?>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="caption" class="form-label">Caption Gallery</label>
+                  <input type="text" class="form-control" id="caption" name="caption" value="<?php echo $b['caption_gallery']?>">
+                </div>
+                <div class="mb-3">
+                  <label for="tanggal" class="form-label">Tanggal gallery</label>
+                  <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?php echo $b['tanggal_gallery']?>">
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  <button type="submit" class="btn btn-primary" name="update">Save Changes</button>
                 </div>
               </form>
+            </div>
           </div>
         </div>
       </div>
+      <?php endwhile;?>
 
       <footer class="main-footer">
         <div class="footer-left">

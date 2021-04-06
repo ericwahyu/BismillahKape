@@ -119,6 +119,7 @@
                         <th>#</th>
                         <th>Nama Kategori Berita</th>
                         <th>Judul Berita</th>
+                        <th>Gambar Berita</th>
                         <th>Tanggal Post Berita</th>
                         <th>Konten Berita</th>
                         <th>Action</th>
@@ -133,11 +134,12 @@
                       ?>
                       <tr>
                         <td><?php echo $index;?></td>
-                        <td><?php echo $sub_kalimat = substr($a['nama_kategori_berita'],0,18)."...";?></td>
-                        <td><?php echo $sub_kalimat = substr($a['judul_berita'],0,35)."...";?></td>
+                        <td><?php echo $sub_kalimat = substr($a['nama_kategori_berita'],0,20)."...";?></td>
+                        <td><?php echo $sub_kalimat = substr($a['judul_berita'],0,20)."...";?></td>
+                        <td><img src="../img/berita/<?php echo $a['gambar_berita'];?>" width="100"></td>
                         <td><?php echo $a['tanggalpost_berita'];?></td>
-                        <td><?php echo $sub_kalimat = substr($a['konten_berita'],0,45)."...";?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_berita'];?>">Update</a>   <a href="../modal/modalBerita.php?id=<?php echo $a['id_berita'];?>&delete" class="badge badge-danger">Delete</a>  <a href="#" class="badge badge-success">Detail</a></td>
+                        <td><?php echo $sub_kalimat = substr($a['konten_berita'],0,20)."...";?></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_berita'];?>">Update</a>   <a href="#" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalBerita.php?id=<?php echo $a['id_berita'];?>&delete&gambarlama=<?php echo $a['gambar_berita'];?>'" class="badge badge-danger">Delete</a>  <a href="#" class="badge badge-success">Detail</a></td>
                       </tr>
                       <?php $index++; endwhile; ?>
                     </table>
@@ -166,9 +168,15 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="../modal/modalBerita.php" method="post">
+              <form action="../modal/modalBerita.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php echo $b['id_berita']?>">
+                <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_berita'];?>">
                 <div class="mb-3">
-                  <input type="hidden" name="id" value="<?php echo $b['id_berita']?>">
+                  <label for="formFile">File Gambar</label> <br>
+                  <img src="../img/berita/<?php echo $b['gambar_berita'];?>" width="200">
+                  <input class="form-control" type="file" id="formFile" name="gambar">
+                </div>
+                <div class="mb-3">
                   <label>Nama Kategori Berita</label>
                   <select class="form-control" name="idkategori">
                     <option selected value="<?php echo $b['id_kategori_berita'];?>"><?php echo $b['nama_kategori_berita'];?></option required>

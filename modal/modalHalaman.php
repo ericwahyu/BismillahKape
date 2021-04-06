@@ -37,7 +37,10 @@
             move_uploaded_file($gambarTmp,'../img/halaman/'.$gambarNamenew);
             $input = mysqli_query($koneksi,"INSERT INTO HALAMAN VALUES ('', '$gambarNamenew','$judul', '$tanggal', '$konten')");
                 if($input){
-                    header("Location:../pages/table.halaman.php?berhasil");
+                    echo "<script>
+                            alert('Data berhasil di tambah !'); window.location='../pages/table.halaman.php ';
+                        </script>";
+                    return false;
                 }
         }
     }else if(isset($_POST['update'])){
@@ -102,7 +105,9 @@
                //hapus database
                $hapus = mysqli_query($koneksi,"DELETE FROM HALAMAN WHERE id_halaman = '$id'");
                if($hapus){
-                   header("Location:../pages/table.halaman.php");
+                echo "<script>
+                        alert('Data berhasil terhapus !'); window.location='../pages/table.halaman.php ';
+                      </script>";
                }
             }
         }

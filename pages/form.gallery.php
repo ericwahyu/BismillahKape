@@ -109,18 +109,14 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="../modal/modalGallery.php" method="post">
+                <form action="../modal/modalGallery.php" method="post" enctype="multipart/form-data">
                   <div class="card-header">
                     <h4>Insert Gallery</h4>
                   </div>
-
                   <div class="card-body">
                     <div class="mb-3">
-                      <label>Pilih File Gambar</label>
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                      </div>
+                      <label for="formFile">Pilih File Gambar</label>
+                      <input class="form-control" type="file" id="formFile" name="gambar">
                     </div>
                     <div class="mb-3">
                       <label>Nama Kategori Gallery</label>
