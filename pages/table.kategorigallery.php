@@ -130,7 +130,7 @@
                       <tr>
                         <td>1</td>
                         <td><?php echo $a['nama_kategori_gallery'];?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_kategori_gallery'];?>">Update</a>   <a href="../modal/modalKategoriGallery.php?id=<?php echo $a['id_kategori_gallery'];?>&delete" class="badge badge-danger">Delete</a></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_kategori_gallery'];?>">Update</a>    <a href="#" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalKategoriGallery.php?id=<?php echo $a['id_kategori_gallery'];?>&delete'" class="badge badge-danger">Delete</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>

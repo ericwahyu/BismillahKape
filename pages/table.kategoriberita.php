@@ -131,7 +131,7 @@
                       <tr>
                         <td><?php echo $index;?></td>
                         <td><?php echo $a['nama_kategori_berita'];?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_kategori_berita'];?>">Update</a>   <a href="../modal/modalKategoriBerita.php?id=<?php echo $a['id_kategori_berita'];?>&delete" class="badge badge-danger">Delete</a></td>
+                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_kategori_berita'];?>">Update</a>   <a href="#" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalKategoriBerita.php?id=<?php echo $a['id_kategori_berita'];?>&delete'" class="badge badge-danger">Delete</a></td>
                       </tr>
                       <?php $index++; endwhile; ?>
                     </table>

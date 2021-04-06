@@ -6,7 +6,9 @@
 
         $input = mysqli_query($koneksi,"INSERT INTO KATEGORI_GALLERY VALUES ('', '$nama')");
         if($input){
-            header("Location:../pages/table.kategorigallery.php");
+            echo "<script>
+                    alert('Data berhasil di tambah !'); window.location='../pages/table.kategorigallery.php ';
+                  </script>";
         }
     }else if(isset($_POST['update'])){
         $id = $_POST['id'];
@@ -14,7 +16,9 @@
 
         $edit = mysqli_query($koneksi,"UPDATE KATEGORI_GALLERY SET nama_kategori_gallery='$nama' WHERE id_kategori_gallery='$id'");
         if($edit){
-           header("Location:../pages/table.kategorigallery.php");
+            echo "<script>
+                    alert('Data berhasil terupdate !'); window.location='../pages/table.kategorigallery.php ';
+                  </script>";
         }
 
     }else if(isset($_GET['delete'])){
@@ -22,7 +26,9 @@
 
         $hapus = mysqli_query($koneksi,"DELETE FROM KATEGORI_GALLERY WHERE id_kategori_gallery = '$id'");
         if($hapus){
-           header("Location:../pages/table.kategorigallery.php");
+            echo "<script>
+                    alert('Data berhasil terhapus !'); window.location='../pages/table.kategorigallery.php ';
+                  </script>";
         }
 
     }

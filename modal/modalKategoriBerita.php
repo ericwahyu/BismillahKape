@@ -6,7 +6,9 @@
 
         $input = mysqli_query($koneksi,"INSERT INTO KATEGORI_BERITA VALUES ('', '$nama')");
         if($input){
-            header("Location:../pages/table.kategoriberita.php");
+            echo "<script>
+                    alert('Data berhasil di tambah !'); window.location='../pages/table.kategoriberita.php ';
+                  </script>";
         }
     }else if(isset($_POST['update'])){
         $id = $_POST['id'];
@@ -14,7 +16,9 @@
 
         $edit = mysqli_query($koneksi,"UPDATE KATEGORI_BERITA SET nama_kategori_berita='$nama' WHERE id_kategori_berita='$id'");
         if($edit){
-            header("Location:../pages/table.kategoriberita.php");
+            echo "<script>
+                    alert('Data berhasil terupdate !'); window.location='../pages/table.kategoriberita.php ';
+                </script>";
         }
 
     }else if(isset($_GET['delete'])){
@@ -22,7 +26,9 @@
 
         $hapus = mysqli_query($koneksi,"DELETE FROM KATEGORI_BERITA WHERE id_kategori_berita = '$id'");
         if($hapus){
-            header("Location:../pages/table.kategoriberita.php");
+            echo "<script>
+                    alert('Data berhasil terhapus !'); window.location='../pages/table.kategoriberita.php ';
+                </script>";
         }
 
     }
