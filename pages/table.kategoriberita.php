@@ -75,8 +75,7 @@
                   <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
               </li>
-              <li class="menu-header">Management</li>
-              <li class="nav-item dropdown">
+              <!-- <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file-alt"></i> <span>Form</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="form.kategoriberita.php">Form Kategori Berita</a></li>
@@ -85,15 +84,16 @@
                   <li><a class="nav-link" href="form.gallery.php">Form Gallery</a></li>
                   <li><a class="nav-link" href="form.halaman.php">Form Halaman</a></li>
                 </ul>
-              </li>
+              </li> -->
+              <li class="menu-header">Management</li>
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
-                  <li class="active"><a class="nav-link" href="table.kategoriberita.php">Table Kategori Berita</a></li>
-                  <li><a class="nav-link" href="table.kategorigallery.php">Table Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.berita.php">Table Berita</a></li>
-                  <li><a class="nav-link" href="table.gallery.php">Table Gallery</a></li>
-                  <li><a class="nav-link" href="table.halaman.php">Table Halaman</a></li>
+                  <li class="active"><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
+                  <li><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="table.berita.php">Berita</a></li>
+                  <li><a class="nav-link" href="table.gallery.php">Gallery</a></li>
+                  <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
                 </ul>
               </li>
               <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
@@ -111,7 +111,7 @@
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>Data Kategori Berita</h4>
+                  <a href="form.kategoriberita.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>Create</a>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -131,29 +131,13 @@
                       <tr>
                         <td><?php echo $index;?></td>
                         <td><?php echo $a['nama_kategori_berita'];?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_kategori_berita'];?>">Update</a>   <a href="#" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalKategoriBerita.php?id=<?php echo $a['id_kategori_berita'];?>&delete'" class="badge badge-danger">Delete</a></td>
+                        <td><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_kategori_berita'];?>"><i class="fas fa-edit"></i>  Update</a>
+                            <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalKategoriBerita.php?id=<?php echo $a['id_kategori_berita'];?>&delete'"><i class="fas fa-trash-alt"></i>  Delete</a></td>
                       </tr>
                       <?php $index++; endwhile; ?>
                     </table>
                   </div>
                 </div>
-                <!-- <div class="card-footer text-right">
-                  <nav class="d-inline-block">
-                    <ul class="pagination mb-0">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                      </li>
-                      <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div> -->
               </div>
             </div>
           </div>

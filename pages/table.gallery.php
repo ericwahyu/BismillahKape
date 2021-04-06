@@ -74,8 +74,7 @@
                   <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
               </li>
-              <li class="menu-header">Management</li>
-              <li class="nav-item dropdown">
+              <!-- <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file-alt"></i> <span>Form</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="form.kategoriberita.php">Form Kategori Berita</a></li>
@@ -84,7 +83,8 @@
                   <li><a class="nav-link" href="form.gallery.php">Form Gallery</a></li>
                   <li><a class="nav-link" href="form.halaman.php">Form Halaman</a></li>
                 </ul>
-              </li>
+              </li> -->
+              <li class="menu-header">Management</li>
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
@@ -110,7 +110,7 @@
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>Data Gallery</h4>
+                <a href="form.gallery.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Create</a>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -131,11 +131,13 @@
                       ?>
                       <tr>
                         <td><?php echo $index?></td>
-                        <td><?php echo $sub_kalimat = substr($a['nama_kategori_gallery'],0,45)."...";?></td>
+                        <td><?php echo $sub_kalimat = substr($a['nama_kategori_gallery'],0,30)."...";?></td>
                         <td><?php echo $sub_kalimat = substr($a['caption_gallery'],0,45)."...";?></td>
                         <td><img src="../img/gallery/<?php echo $a['gambar_gallery'];?>" width="100"></td>
                         <td><?php echo $a['tanggal_gallery']?></td>
-                        <td><a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>">Update</a>  <a href="#" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'" class="badge badge-danger">Delete</a>  <a href="#" class="badge badge-success">Detail</a></td>
+                        <td><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>"><i class="fas fa-edit"></i>  Update</a>
+                            <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'"><i class="fas fa-trash-alt"></i>  Delete</a>
+                            <a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>

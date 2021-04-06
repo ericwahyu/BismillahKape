@@ -74,8 +74,7 @@
                   <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
               </li>
-              <li class="menu-header">Management</li>
-              <li class="nav-item dropdown active">
+              <!-- <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file-alt"></i> <span>Form</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="form.kategoriberita.php">Form Kategori Berita</a></li>
@@ -84,15 +83,16 @@
                   <li><a class="nav-link" href="form.gallery.php">Form Gallery</a></li>
                   <li><a class="nav-link" href="form.halaman.php">Form Halaman</a></li>
                 </ul>
-              </li>
-              <li class="nav-item dropdown">
+              </li> -->
+              <li class="menu-header">Management</li>
+              <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="table.kategoriberita.php">Table Kategori Berita</a></li>
-                  <li><a class="nav-link" href="table.kategorigallery.php">Table Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.berita.php">Table Berita</a></li>
-                  <li><a class="nav-link" href="table.gallery.php">Table Gallery</a></li>
-                  <li><a class="nav-link" href="table.halaman.php">Table Halaman</a></li>
+                  <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
+                  <li class="active"><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="table.berita.php">Berita</a></li>
+                  <li><a class="nav-link" href="table.gallery.php">Gallery</a></li>
+                  <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
                 </ul>
               </li>
               <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
