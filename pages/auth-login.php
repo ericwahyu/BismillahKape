@@ -1,3 +1,32 @@
+<?php
+  require_once("../modal/koneksi.php");
+
+  if(isset($_POST['login'])){
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+    $sql = "SELECT * FROM users WHERE username=:username OR email=:email";
+    $stmt = $koneksi->prepare($sql);
+    
+    $params = array(
+        ":username" => $username,
+        ":email" => $username
+    );
+
+    $stmt->execute($params);
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if($user){
+      if(password_verify($password, $user["password"])){
+          session_start();
+          $_SESSION["user"] = $user;
+          header("Location: table.berita.php");
+      }
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,10 +60,10 @@
               <div class="card-header"><h4>Login</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
+                <form method="POST" action="" class="needs-validation" novalidate="">
                   <div class="form-group">
                     <label for="text">Username</label>
-                    <input id="text" type="text" class="form-control" name="text" tabindex="1" required autofocus>
+                    <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
                     <div class="invalid-feedback">
                       Masukkan NPM anda
                     </div>
@@ -63,13 +92,13 @@
                   </div>
 
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4" name="login" value="masuk">
                       Login
                     </button>
                   </div>
                 </form>
                 <div class="mt-5 text-muted text-center">
-                  Tidak punya akun? <a href="auth-register.html">Daftar disini</a>
+                  Tidak punya akun? <a href="auth-register.php">Daftar disini</a>
                 </div>
               </div>
             </div>

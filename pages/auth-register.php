@@ -1,3 +1,34 @@
+<?php 
+  require_once("../modal/koneksi.php");
+
+  if(isset($_POST['register'])){
+    // filter data yang diinputkan
+    $nama_depan = filter_input(INPUT_POST, 'nama_depan', FILTER_SANITIZE_STRING);
+    $nama_belakang = filter_input(INPUT_POST, 'nama_belakang', FILTER_SANITIZE_STRING);
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    // enkripsi password
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+
+    // menyiapkan query
+    $sql = "INSERT INTO users (nama_depan, nama_belakang, username, email, password) 
+            VALUES (:nama_depan, :nama_belakang , :username, :email, :password)";
+    $stmt = $koneksi->prepare($sql);
+
+    // bind parameter ke query
+    $params = array(
+        ":nama_depan" => $nama_depan,
+        ":nama_belakang" => $nama_belakang,
+        ":username" => $username,
+        ":password" => $password,
+        ":email" => $email
+    );
+    $saved = $stmt->execute($params);
+
+    if($saved) header("Location: auth-login.php");
+ } 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,15 +62,22 @@
               <div class="card-header"><h4>Register</h4></div>
 
               <div class="card-body">
-                <form method="POST">
+                <form method="POST" action="">
                   <div class="row">
                     <div class="form-group col-6">
-                      <label for="first_name">Nama Depan</label>
-                      <input id="first_name" type="text" class="form-control" name="first_name" autofocus>
+                      <label for="nama_depan">Nama Depan</label>
+                      <input id="nama_depan" type="text" class="form-control" name="nama_depan" autofocus>
                     </div>
                     <div class="form-group col-6">
-                      <label for="last_name">Nama Belakang</label>
-                      <input id="last_name" type="text" class="form-control" name="last_name">
+                      <label for="nama_belakang">Nama Belakang</label>
+                      <input id="nama_belakang" type="text" class="form-control" name="nama_belakang">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" class="form-control" name="username">
+                    <div class="invalid-feedback">
                     </div>
                   </div>
 
@@ -59,39 +97,6 @@
                         <div class="label"></div>
                       </div>
                     </div>
-                    <div class="form-group col-6">
-                      <label for="password2" class="d-block">Konfirmasi password</label>
-                      <input id="password2" type="password" class="form-control" name="password-confirm">
-                    </div>
-                  </div>
-
-                  <div class="form-divider">
-                    Lokasi Anda ?
-                  </div>
-                  <div class="row">
-                    <div class="form-group col-6">
-                      <label>Negara</label>
-                      <select class="form-control selectric">
-                        <option>Indonesia</option>
-                        <option>Palestine</option>
-                        <option>Malaysia</option>
-                        <option>Thailand</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-6">
-                      <label>Provinsi</label>
-                      <select class="form-control selectric">
-                        <option>Jawa Timur</option>
-                        <option>Jawa Tengah</option>
-                        <option>Jawa Barat</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="form-group col-6">
-                      <label>Kota</label>
-                      <input type="text" class="form-control">
-                    </div>
                   </div>
 
                   <div class="form-group">
@@ -102,11 +107,14 @@
                   </div>
 
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="register" value="Daftar">
                       Registrasi
                     </button>
                   </div>
                 </form>
+                <div class="mt-5 text-muted text-center">
+                  Kembali <a href="auth-login.php">Login</a>
+                </div>
               </div>
             </div>
             <div class="simple-footer">
