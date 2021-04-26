@@ -133,7 +133,7 @@
                         <th>Action</th>
                       </tr>
                       <?php
-                        include "../modal/koneksi.php";
+                        include "../koneksi.php";
 
                         $view = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
                         $index=1;
@@ -145,9 +145,9 @@
                         <td><img src="../img/halaman/<?php echo $a['gambar_halaman'];?>" width="100"></td>
                         <td><?php echo $a['tanggalpost_halaman']?></td>
                         <td><?php echo $sub_kalimat = substr($a['konten_halaman'],0,25)."...";?></td>
-                        <td><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_halaman'];?>"><i class="fas fa-edit"></i>  Update</a>
+                        <td><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_halaman'];?>"><i class="fas fa-edit"></i>  Update</a>
                             <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete&gambarlama=<?php echo $a['gambar_halaman'];?>'"><i class="fas fa-trash-alt"></i>  Delete</a>
-                            <a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a></td>
+                            <a href="#" class="badge badge-success" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_halaman'];?>"><i class="fas fa-info-circle"></i>  Detail</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>
@@ -166,7 +166,7 @@
         $select = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
         while($b = mysqli_fetch_array($select)):
       ?>
-      <div class="modal fade " tabindex="-1" role="dialog" id="exampleModal<?php echo $b['id_halaman'];?>">
+      <div class="modal fade " tabindex="-1" role="dialog" id="modalupdate<?php echo $b['id_halaman'];?>">
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -197,6 +197,39 @@
                       <label>Konten Halaman</label>
                       <textarea class="form-control ckeditor" name="konten" ><?php echo $b['konten_halaman'];?></textarea required>
                     </div>
+                  </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary" name="update">Save changes</button>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+      <?php endwhile;?>
+
+      <?php
+        $detail = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
+        while($c = mysqli_fetch_array($detail)):
+      ?>
+      <div class="modal fade " tabindex="-1" role="dialog" id="modaldetail<?php echo $c['id_halaman'];?>">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Update Halaman</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="#" method="post" enctype="multipart/form-data">
+                  <div class="card-body">
+                    <input type="hidden" name="id" value="<?php echo $b['id_halaman'];?>">
+                    <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_halaman'];?>">
+
+
+
                   </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">

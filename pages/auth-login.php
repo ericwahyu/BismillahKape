@@ -1,30 +1,30 @@
 <?php
-  require_once("../modal/koneksi.php");
+  // require_once("../modal/koneksi.php");
 
-  if(isset($_POST['login'])){
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+  // if(isset($_POST['login'])){
+  //   $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+  //   $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-    $sql = "SELECT * FROM users WHERE username=:username OR email=:email";
-    $stmt = $koneksi->prepare($sql);
-    
-    $params = array(
-        ":username" => $username,
-        ":email" => $username
-    );
+  //   $sql = "SELECT * FROM users WHERE username=:username OR email=:email";
+  //   $stmt = $koneksi->prepare($sql);
 
-    $stmt->execute($params);
+  //   $params = array(
+  //       ":username" => $username,
+  //       ":email" => $username
+  //   );
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+  //   $stmt->execute($params);
 
-    if($user){
-      if(password_verify($password, $user["password"])){
-          session_start();
-          $_SESSION["user"] = $user;
-          header("Location: table.berita.php");
-      }
-    }
-  }
+  //   $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  //   if($user){
+  //     if(password_verify($password, $user["password"])){
+  //         session_start();
+  //         $_SESSION["user"] = $user;
+  //         header("Location: table.berita.php");
+  //     }
+  //   }
+  // }
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +60,7 @@
               <div class="card-header"><h4>Login</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="" class="needs-validation" novalidate="">
+                <form method="POST" action="../modal/modalLogin.php" class="needs-validation" novalidate="">
                   <div class="form-group">
                     <label for="text">Username</label>
                     <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
