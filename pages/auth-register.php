@@ -1,5 +1,5 @@
 <?php 
-  require_once("../modal/koneksi.php");
+  include "../modal/koneksi.php";
 
   if(isset($_POST['register'])){
     // filter data yang diinputkan
@@ -89,7 +89,7 @@
                   </div>
 
                   <div class="row">
-                    <div class="form-group col-6">
+                    <div class="form-group col-12">
                       <label for="password" class="d-block">Password</label>
                       <input id="password" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="password">
                       <div id="pwindicator" class="pwindicator">
