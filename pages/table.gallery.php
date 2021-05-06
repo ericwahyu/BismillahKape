@@ -135,7 +135,7 @@
                         <td><?php echo $sub_kalimat = substr($a['caption_gallery'],0,45)."...";?></td>
                         <td><img src="../img/gallery/<?php echo $a['gambar_gallery'];?>" width="100"></td>
                         <td><?php echo $a['tanggal_gallery']?></td>
-                        <td class="d-flex">
+                        <td class="d-flex m-2">
                           <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>"><i class="fas fa-edit"></i>  Ubah</a>
                           <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
                           <a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a>

@@ -119,23 +119,23 @@
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <a href="form.halaman.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Create</a>
+                  <a href="form.halaman.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Tambah</a>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-hover table-bordered">
+                    <table class="table table-bordered table-md">
                       <tr>
                         <th>#</th>
                         <th>Judul Halaman</th>
                         <th>Gambar Halaman</th>
                         <th>Tanggal Post Halaman</th>
                         <th>Konten Halaman</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                       </tr>
                       <?php
                         include "../koneksi.php";
 
-                        $view = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
+                        $view = mysqli_query($koneksi, "SELECT * FROM halaman");
                         $index=1;
                         while($a = mysqli_fetch_array($view)):
                       ?>
@@ -145,9 +145,11 @@
                         <td><img src="../img/halaman/<?php echo $a['gambar_halaman'];?>" width="100"></td>
                         <td><?php echo $a['tanggalpost_halaman']?></td>
                         <td><?php echo $sub_kalimat = substr($a['konten_halaman'],0,25)."...";?></td>
-                        <td><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_halaman'];?>"><i class="fas fa-edit"></i>  Update</a>
-                            <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete&gambarlama=<?php echo $a['gambar_halaman'];?>'"><i class="fas fa-trash-alt"></i>  Delete</a>
-                            <a href="#" class="badge badge-success" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_halaman'];?>"><i class="fas fa-info-circle"></i>  Detail</a></td>
+                        <td class="d-flex m-2">
+                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_halaman'];?>"><i class="fas fa-edit"></i>  Ubah</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete&gambarlama=<?php echo $a['gambar_halaman'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
+                          <a href="#" class="badge badge-success" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_halaman'];?>"><i class="fas fa-info-circle"></i>  Detail</a>
+                        </td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>
@@ -163,7 +165,7 @@
       </div>
 
       <?php
-        $select = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
+        $select = mysqli_query($koneksi, "SELECT * FROM halaman");
         while($b = mysqli_fetch_array($select)):
       ?>
       <div class="modal fade " tabindex="-1" role="dialog" id="modalupdate<?php echo $b['id_halaman'];?>">
@@ -210,7 +212,7 @@
       <?php endwhile;?>
 
       <?php
-        $detail = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
+        $detail = mysqli_query($koneksi, "SELECT * FROM halaman");
         while($c = mysqli_fetch_array($detail)):
       ?>
       <div class="modal fade " tabindex="-1" role="dialog" id="modaldetail<?php echo $c['id_halaman'];?>">
