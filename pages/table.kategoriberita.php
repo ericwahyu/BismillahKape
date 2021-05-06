@@ -111,28 +111,33 @@
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <a href="form.kategoriberita.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>Create</a>
+                  <a href="form.kategoriberita.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>Tambah</a>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-bordered table-md">
                       <tr>
-                        <th>#</th>
+                        <th>No</th>
                         <th>Nama Kategori Berita</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                       </tr>
                       <?php
-                        include "../modal/koneksi.php";
+                        include "../koneksi.php";
 
-                        $view= mysqli_query($koneksi, "SELECT * FROM KATEGORI_BERITA");
+                        $view= mysqli_query($koneksi, "SELECT * FROM kategori_berita");
                         $index=1;
                         while($a = mysqli_fetch_array($view)):
                       ?>
                       <tr>
-                        <td><?php echo $index;?></td>
-                        <td><?php echo $a['nama_kategori_berita'];?></td>
-                        <td><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_kategori_berita'];?>"><i class="fas fa-edit"></i>  Update</a>
-                            <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalKategoriBerita.php?id=<?php echo $a['id_kategori_berita'];?>&delete'"><i class="fas fa-trash-alt"></i>  Delete</a></td>
+                        <td>
+                          <?php echo $index;?>
+                        </td>
+                        <td>
+                          <?php echo $a['nama_kategori_berita'];?>
+                        </td>
+                        <td>
+                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_kategori_berita'];?>"><i class="fas fa-edit"></i>  Ubah</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalKategoriBerita.php?id=<?php echo $a['id_kategori_berita'];?>&delete'"><i class="fas fa-trash-alt"></i>  Hapus</a></td>
                       </tr>
                       <?php $index++; endwhile; ?>
                     </table>
@@ -148,7 +153,7 @@
       </div>
 
       <?php
-        $select= mysqli_query($koneksi, "SELECT * FROM KATEGORI_BERITA");
+        $select= mysqli_query($koneksi, "SELECT * FROM kategori_berita");
         while($b = mysqli_fetch_array($select)):
       ?>
       <div class="modal fade" id="modalupdate<?php echo $b['id_kategori_berita'];?>" tabindex="-1">
