@@ -88,11 +88,11 @@
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="table.kategoriberita.php">Table Kategori Berita</a></li>
-                  <li><a class="nav-link" href="table.kategorigallery.php">Table Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.berita.php">Table Berita</a></li>
-                  <li class="active"><a class="nav-link" href="table.gallery.php">Table Gallery</a></li>
-                  <li><a class="nav-link" href="table.halaman.php">Table Halaman</a></li>
+                  <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
+                  <li><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="table.berita.php">Berita</a></li>
+                  <li class="active"><a class="nav-link" href="table.gallery.php">Gallery</a></li>
+                  <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
                 </ul>
               </li>
               <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
@@ -110,7 +110,7 @@
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                <a href="form.gallery.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Create</a>
+                <a href="form.gallery.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Tambah</a>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -121,11 +121,11 @@
                         <th>Caption Gallery</th>
                         <th>Gambar Gallery</th>
                         <th>Tanggal Gallery</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                       </tr>
                       <?php
-                        include "../modal/koneksi.php";
-                        $view = mysqli_query($koneksi, "SELECT * FROM GALLERY JOIN KATEGORI_GALLERY ON GALLERY.id_kategori_gallery = KATEGORI_GALLERY.id_kategori_gallery ORDER BY id_gallery ASC");
+                        include "../koneksi.php";
+                        $view = mysqli_query($koneksi, "SELECT * FROM gallery JOIN kategori_gallery ON gallery.id_kategori_gallery = kategori_gallery.id_kategori_gallery ORDER BY id_gallery ASC");
                         $index=1;
                         while($a = mysqli_fetch_array($view)):
                       ?>
@@ -135,9 +135,11 @@
                         <td><?php echo $sub_kalimat = substr($a['caption_gallery'],0,45)."...";?></td>
                         <td><img src="../img/gallery/<?php echo $a['gambar_gallery'];?>" width="100"></td>
                         <td><?php echo $a['tanggal_gallery']?></td>
-                        <td><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>"><i class="fas fa-edit"></i>  Update</a>
-                            <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'"><i class="fas fa-trash-alt"></i>  Delete</a>
-                            <a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a></td>
+                        <td class="d-flex">
+                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>"><i class="fas fa-edit"></i>  Ubah</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
+                          <a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a>
+                        </td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>
@@ -153,7 +155,7 @@
       </div>
 
       <?php
-        $select= mysqli_query($koneksi, "SELECT * FROM GALLERY JOIN KATEGORI_GALLERY ON GALLERY.id_kategori_gallery = KATEGORI_GALLERY.id_kategori_gallery");
+        $select= mysqli_query($koneksi, "SELECT * FROM gallery JOIN kategori_galleru ON gallery.id_kategori_gallery = kategori_gallery.id_kategori_gallery");
         while($b = mysqli_fetch_array($select)):
       ?>
       <div class="modal fade" id="modalupdate<?php echo $b['id_gallery'];?>" tabindex="-1">

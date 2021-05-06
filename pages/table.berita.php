@@ -110,7 +110,7 @@
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <a href="form.berita.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Create</a>
+                  <a href="form.berita.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Tambah</a>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -122,13 +122,13 @@
                         <th>Gambar Berita</th>
                         <th>Tanggal Post Berita</th>
                         <th>Konten Berita</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                         <th></th>
                       </tr>
                       <?php
-                        include "../modal/koneksi.php";
+                        include "../koneksi.php";
 
-                        $view= mysqli_query($koneksi, "SELECT * FROM BERITA JOIN KATEGORI_BERITA ON BERITA.id_kategori_berita = KATEGORI_BERITA.id_kategori_berita ORDER BY id_berita ASC");
+                        $view= mysqli_query($koneksi, "SELECT * FROM berita JOIN kategori_berita ON berita.id_kategori_berita = kategori_berita.id_kategori_berita ORDER BY id_berita ASC");
                         $index=1;
                         while($a = mysqli_fetch_array($view)):
                       ?>
@@ -139,9 +139,11 @@
                         <td><img src="../img/berita/<?php echo $a['gambar_berita'];?>" width="100"></td>
                         <td><?php echo $a['tanggalpost_berita'];?></td>
                         <td><?php echo $sub_kalimat = substr($a['konten_berita'],0,25)."...";?></td>
-                        <td><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_berita'];?>"><i class="fas fa-edit"></i>  Update</a>
-                            <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalBerita.php?id=<?php echo $a['id_berita'];?>&delete&gambarlama=<?php echo $a['gambar_berita'];?>'"><i class="fas fa-trash-alt"></i>  Delete</a>
-                            <a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a></td>
+                        <td class="d-flex justify-content-between">
+                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_berita'];?>"><i class="fas fa-edit"></i>  Ubah</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalBerita.php?id=<?php echo $a['id_berita'];?>&delete&gambarlama=<?php echo $a['gambar_berita'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
+                          <a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a>
+                        </td>
                       </tr>
                       <?php $index++; endwhile; ?>
                     </table>
@@ -157,7 +159,7 @@
       </div>
 
       <?php
-        $select= mysqli_query($koneksi, "SELECT * FROM BERITA JOIN KATEGORI_BERITA ON BERITA.id_kategori_berita = KATEGORI_BERITA.id_kategori_berita");
+        $select= mysqli_query($koneksi, "SELECT * FROM berita JOIN kategori_berita ON berita.id_kategori_berita = kategori_berita.id_kategori_berita");
         while($b = mysqli_fetch_array($select)):
       ?>
       <div class="modal fade" id="modalupdate<?php echo $b['id_berita'];?>" tabindex="-1">
