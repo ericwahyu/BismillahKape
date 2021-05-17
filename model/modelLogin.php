@@ -52,6 +52,27 @@ require_once("../koneksi.php");
           </script>";
           return false;
 
+  }else if(isset($_POST['reset'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $passwordnew = $_POST['confirm-password'];
+
+    if($password == $passwordnew){
+      $edit = mysqli_query($koneksi,"UPDATE USERS SET password ='$password' WHERE email='$email'");
+        if($edit){
+            echo "<script>
+                    alert('Password berhasil terupdate !'); window.location='../pages/auth-login.php';
+                </script>";
+        }else{
+          echo "<script>
+            alert('Password gagal terupdate !'); window.location='../pages/auth-reset-password.php';
+            </script>";
+        }
+    }else{
+      echo "<script>
+            alert('Password tidak sama !'); window.location='../pages/auth-reset-password.php';
+            </script>";
+    }
   }
   // $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
   // $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
