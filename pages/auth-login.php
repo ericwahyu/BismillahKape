@@ -1,32 +1,3 @@
-<?php
-  // require_once("../modal/koneksi.php");
-
-  // if(isset($_POST['login'])){
-  //   $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-  //   $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-
-  //   $sql = "SELECT * FROM users WHERE username=:username OR email=:email";
-  //   $stmt = $koneksi->prepare($sql);
-
-  //   $params = array(
-  //       ":username" => $username,
-  //       ":email" => $username
-  //   );
-
-  //   $stmt->execute($params);
-
-  //   $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  //   if($user){
-  //     if(password_verify($password, $user["password"])){
-  //         session_start();
-  //         $_SESSION["user"] = $user;
-  //         header("Location: table.berita.php");
-  //     }
-  //   }
-  // }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,12 +31,12 @@
               <div class="card-header"><h4>Login</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="../modal/modalLogin.php" class="needs-validation" novalidate="">
+                <form method="POST" action="../model/modelLogin.php" class="needs-validation" novalidate="">
                   <div class="form-group">
                     <label for="text">Username</label>
                     <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
                     <div class="invalid-feedback">
-                      Masukkan NPM anda
+                      Masukkan Username Anda
                     </div>
                   </div>
 
@@ -73,8 +44,8 @@
                     <div class="d-block">
                     	<label for="password" class="control-label">Password</label>
                       <div class="float-right">
-                        <a href="auth-forgot-password.html" class="text-small">
-                          Forgot Password?
+                        <a href="auth-reset-password.php" class="text-small">
+                          Lupa Password?
                         </a>
                       </div>
                     </div>

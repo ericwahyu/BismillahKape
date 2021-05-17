@@ -1,34 +1,3 @@
-<?php
-//   require_once("../modal/koneksi.php");
-
-//   if(isset($_POST['register'])){
-//     // filter data yang diinputkan
-//     $nama_depan = filter_input(INPUT_POST, 'nama_depan', FILTER_SANITIZE_STRING);
-//     $nama_belakang = filter_input(INPUT_POST, 'nama_belakang', FILTER_SANITIZE_STRING);
-//     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-//     // enkripsi password
-//     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-//     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-
-//     // menyiapkan query
-//     $sql = "INSERT INTO users (nama_depan, nama_belakang, username, email, password)
-//             VALUES (:nama_depan, :nama_belakang , :username, :email, :password)";
-//     $stmt = $koneksi->prepare($sql);
-
-//     // bind parameter ke query
-//     $params = array(
-//         ":nama_depan" => $nama_depan,
-//         ":nama_belakang" => $nama_belakang,
-//         ":username" => $username,
-//         ":password" => $password,
-//         ":email" => $email
-//     );
-//     $saved = $stmt->execute($params);
-
-//     if($saved) header("Location: auth-login.php");
-//  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,39 +31,50 @@
               <div class="card-header"><h4>Register</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="../modal/modalRegistrasi.php">
+                <form method="POST" action="../model/modelLogin.php" class="needs-validation" novalidate="">
                   <div class="row">
                     <div class="form-group col-6">
                       <label for="nama_depan">Nama Depan</label>
-                      <input id="nama_depan" type="text" class="form-control" name="nama_depan" autofocus>
+                      <input id="nama_depan" type="text" class="form-control" name="nama_depan" tabindex="1" required autofocus>
+                      <div class="invalid-feedback">
+                        Masukkan Nama Depan
+                      </div>
                     </div>
                     <div class="form-group col-6">
                       <label for="nama_belakang">Nama Belakang</label>
-                      <input id="nama_belakang" type="text" class="form-control" name="nama_belakang">
+                      <input id="nama_belakang" type="text" class="form-control" name="nama_belakang" required>
+                      <div class="invalid-feedback">
+                        Masukkan Nama Belakang
+                      </div>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input id="username" type="text" class="form-control" name="username">
+                    <input id="username" type="text" class="form-control" name="username" tabindex="3" required>
                     <div class="invalid-feedback">
+                      Masukkan Username
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" type="email" class="form-control" name="email">
+                    <input id="email" type="email" class="form-control" name="email" required>
                     <div class="invalid-feedback">
+                      Masukkan Email
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="form-group col-6">
                       <label for="password" class="d-block">Password</label>
-                      <input id="password" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="password">
+                      <input id="password" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="password" required>
                       <div id="pwindicator" class="pwindicator">
                         <div class="bar"></div>
                         <div class="label"></div>
+                      </div>
+                      <div class="invalid-feedback">
+                        Masukkan Password anda
                       </div>
                     </div>
                   </div>
