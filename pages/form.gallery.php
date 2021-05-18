@@ -104,7 +104,7 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="../modal/modalGallery.php" method="post" enctype="multipart/form-data">
+                <form action="../model/modelGallery.php" method="post" enctype="multipart/form-data">
                   <div class="card-header">
                     <h4>Insert Gallery</h4>
                   </div>
@@ -118,7 +118,7 @@
                       <select class="form-control" name="idkategori">
                         <option selected>-- Pilih Kategori Gallery --</option>
                         <?php
-                          include "../modal/koneksi.php";
+                          require_once('../koneksi.php');
 
                           $select = mysqli_query($koneksi, "SELECT * FROM KATEGORI_GALLERY");
                           while($a = mysqli_fetch_array($select)):

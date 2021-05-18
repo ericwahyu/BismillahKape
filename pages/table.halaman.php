@@ -142,7 +142,7 @@
                         <td><?php echo $sub_kalimat = substr($a['konten_halaman'],0,25)."...";?></td>
                         <td class="d-flex m-2">
                           <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_halaman'];?>"><i class="fas fa-edit"></i>  Ubah</a>
-                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalHalaman.php?id=<?php echo $a['id_halaman'];?>&delete&gambarlama=<?php echo $a['gambar_halaman'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelHalaman.php?id=<?php echo $a['id_halaman'];?>&delete&gambarlama=<?php echo $a['gambar_halaman'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
                           <a href="#" class="badge badge-success" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_halaman'];?>"><i class="fas fa-info-circle"></i>  Detail</a>
                         </td>
                       </tr>
@@ -167,13 +167,13 @@
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Update Halaman</h5>
+              <h5 class="modal-title">Detail Halaman</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-               <form action="../modal/modalHalaman.php" method="post" enctype="multipart/form-data">
+               <form action="../model/modelHalaman.php" method="post" enctype="multipart/form-data">
                   <div class="card-body">
                     <input type="hidden" name="id" value="<?php echo $b['id_halaman'];?>">
                     <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_halaman'];?>">
@@ -205,7 +205,7 @@
         </div>
       </div>
       <?php endwhile;?>
-
+      <!-- Modal Detail -->
       <?php
         $detail = mysqli_query($koneksi, "SELECT * FROM halaman");
         while($c = mysqli_fetch_array($detail)):
@@ -221,19 +221,22 @@
             </div>
             <div class="modal-body">
               <form action="#" method="post" enctype="multipart/form-data">
-                  <div class="card-body">
-                    <input type="hidden" name="id" value="<?php echo $b['id_halaman'];?>">
-                    <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_halaman'];?>">
-
-
+                  <div class="card-body" align="middle" line-height="2px">
+                    <img src="../img/halaman/<?php echo $c['gambar_halaman'];?>" width="400"><br>
+                    <h3>Judul Halaman</h3>
+                    <p><?php echo $c['judul_halaman']?></p>
+                    <h3>Tanggal Post Halaman</h3>
+                    <p><?php echo $c['tanggalpost_halaman']?></p>
+                    <h3>Konten Halaman</h3>
+                    <p><?php echo $c['konten_halaman']?></p>
 
                   </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" name="update">Save changes</button>
                 </div>
               </form>
+            </div>
           </div>
         </div>
       </div>

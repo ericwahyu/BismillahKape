@@ -127,7 +127,7 @@
                         <td><?php echo $a['nama_kategori_gallery'];?></td>
                         <td>
                           <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_kategori_gallery'];?>"><i class="fas fa-edit"></i>  Ubah</a>
-                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalKategoriGallery.php?id=<?php echo $a['id_kategori_gallery'];?>&delete'"><i class="fas fa-trash-alt"></i>  Hapus</a></td>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelKategoriGallery.php?id=<?php echo $a['id_kategori_gallery'];?>&delete'"><i class="fas fa-trash-alt"></i>  Hapus</a></td>
                       </tr>
                       <?php $index++; endwhile;?>
                     </table>
@@ -156,7 +156,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="../modal/modalKategoriGallery.php" method="post">
+              <form action="../model/modelKategoriGallery.php" method="post">
                 <div class="mb-3">
                   <input type="hidden" name="id" value="<?php echo $b['id_kategori_gallery']?>">
                   <label for="nama" class="form-label">Nama Kategori Berita</label>

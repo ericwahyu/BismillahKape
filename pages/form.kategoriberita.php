@@ -104,7 +104,7 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="../modal/modalKategoriBerita.php" method="post">
+                <form action="../model/modelKategoriBerita.php" method="post">
                   <div class="card-header">
                     <h4>Insert Kategori Berita</h4>
                   </div>

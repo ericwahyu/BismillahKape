@@ -131,8 +131,8 @@
                           <?php echo $a['nama_kategori_berita'];?>
                         </td>
                         <td>
-                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#exampleModal<?php echo $a['id_kategori_berita'];?>"><i class="fas fa-edit"></i>  Ubah</a>
-                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalKategoriBerita.php?id=<?php echo $a['id_kategori_berita'];?>&delete'"><i class="fas fa-trash-alt"></i>  Hapus</a></td>
+                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_kategori_berita'];?>"><i class="fas fa-edit"></i>  Ubah</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelKategoriBerita.php?id=<?php echo $a['id_kategori_berita'];?>&delete'"><i class="fas fa-trash-alt"></i>  Hapus</a></td>
                       </tr>
                       <?php $index++; endwhile; ?>
                     </table>
@@ -161,7 +161,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="../modal/modalKategoriBerita.php" method="post">
+              <form action="../model/modelKategoriBerita.php" method="post">
                 <div class="mb-3">
                   <input type="hidden" name="id" value="<?php echo $b['id_kategori_berita']?>">
                   <label for="nama" class="form-label">Nama Kategori Berita</label>

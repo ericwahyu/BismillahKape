@@ -135,9 +135,9 @@
                         <td><?php echo $a['tanggalpost_berita'];?></td>
                         <td><?php echo $sub_kalimat = substr($a['konten_berita'],0,25)."...";?></td>
                         <td class="d-flex m-2">
-                          <span><a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_berita'];?>"><i class="fas fa-edit"></i>  Ubah</a></span>
-                          <span><a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalBerita.php?id=<?php echo $a['id_berita'];?>&delete&gambarlama=<?php echo $a['gambar_berita'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a></span>
-                          <span><a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a></span>
+                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_berita'];?>"><i class="fas fa-edit"></i>  Ubah</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelBerita.php?id=<?php echo $a['id_berita'];?>&delete&gambarlama=<?php echo $a['gambar_berita'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
+                          <a href="#" class="badge badge-success" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_berita'];?>"><i class="fas fa-info-circle"></i>  Detail</a>
                         </td>
                       </tr>
                       <?php $index++; endwhile; ?>
@@ -167,7 +167,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="../modal/modalBerita.php" method="post" enctype="multipart/form-data">
+              <form action="../model/modelBerita.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $b['id_berita']?>">
                 <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_berita'];?>">
                 <div class="mb-3">
@@ -202,6 +202,44 @@
                 <div class="modal-footer bg-whitesmoke br">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary" name="update">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php endwhile;?>
+      
+      <!-- Modal Detail -->
+      <?php
+        $detail = mysqli_query($koneksi, "SELECT * FROM berita JOIN kategori_berita ON berita.id_kategori_berita = kategori_berita.id_kategori_berita");
+        while($c = mysqli_fetch_array($detail)):
+      ?>
+      <div class="modal fade " tabindex="-1" role="dialog" id="modaldetail<?php echo $c['id_berita'];?>">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Detail Berita</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="#" method="post" enctype="multipart/form-data">
+                  <div class="card-body" align="middle" line-height="1.5px">
+                    <img src="../img/berita/<?php echo $c['gambar_berita'];?>" width="400"><br>
+                    <h3>Nama Kategori Berita</h3>
+                    <p><?php echo $c['nama_kategori_berita']?></p>
+                    <h3>Judul Berita</h3>
+                    <p><?php echo $c['judul_berita']?></p>
+                    <h3>Tanggal Post Berita</h3>
+                    <p><?php echo $c['tanggalpost_berita']?></p>
+                    <h3>Konten Berita</h3>
+                    <p><?php echo $c['konten_berita']?></p>
+                  </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
               </form>
             </div>

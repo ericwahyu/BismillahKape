@@ -104,7 +104,7 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="../modal/modalHalaman.php" method="post" enctype="multipart/form-data">
+                <form action="../model/modelHalaman.php" method="post" enctype="multipart/form-data">
                   <div class="card-header">
                     <h4>Insert Halaman</h4>
                   </div>

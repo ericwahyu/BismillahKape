@@ -104,7 +104,7 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="../modal/modalBerita.php" method="post" enctype="multipart/form-data">
+                <form action="../model/modelBerita.php" method="post" enctype="multipart/form-data">
                   <div class="card-header">
                     <h4>Insert Berita</h4>
                   </div>
@@ -118,7 +118,7 @@
                       <select class="form-control" name="idkategori">
                         <option selected>-- Pilih Kategori Berita --</option required>
                         <?php
-                          include "../modal/koneksi.php";
+                          require_once('../koneksi.php');
 
                           $view= mysqli_query($koneksi, "SELECT * FROM KATEGORI_BERITA");
                           while($a = mysqli_fetch_array($view)):

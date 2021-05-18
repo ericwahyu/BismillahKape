@@ -132,8 +132,8 @@
                         <td><?php echo $a['tanggal_gallery']?></td>
                         <td class="d-flex m-2">
                           <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>"><i class="fas fa-edit"></i>  Ubah</a>
-                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../modal/modalGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
-                          <a href="#" class="badge badge-success" style="text-decoration:none"><i class="fas fa-info-circle"></i>  Detail</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
+                          <a href="#" class="badge badge-success" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_gallery'];?>"><i class="fas fa-info-circle"></i>  Detail</a>
                         </td>
                       </tr>
                       <?php $index++; endwhile;?>
@@ -163,7 +163,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="../modal/modalGallery.php" method="post" enctype="multipart/form-data">
+              <form action="../model/modelGallery.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $b['id_gallery']?>">
                 <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_gallery'];?>">
                 <div class="mb-3">
@@ -202,6 +202,41 @@
       </div>
       <?php endwhile;?>
 
+      <!-- Modal Detail -->
+      <?php
+        $detail = mysqli_query($koneksi, "SELECT * FROM gallery JOIN kategori_gallery ON gallery.id_kategori_gallery = kategori_gallery.id_kategori_gallery");
+        while($c = mysqli_fetch_array($detail)):
+      ?>
+      <div class="modal fade " tabindex="-1" role="dialog" id="modaldetail<?php echo $c['id_gallery'];?>">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Detail Gallery</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="#" method="post" enctype="multipart/form-data">
+                  <div class="card-body" align="middle" line-height="1.5px">
+                  <img src="../img/gallery/<?php echo $c['gambar_gallery'];?>" width="400"><br>
+                    <h3>Nama Kategori Gallery</h3>
+                    <p><?php echo $c['nama_kategori_gallery']?></p>
+                    <h3>Caption Gallery</h3>
+                    <p><?php echo $c['caption_gallery']?></p>
+                    <h3>Tanggal Post Gallery</h3>
+                    <p><?php echo $c['tanggal_gallery']?></p>
+                  </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php endwhile;?>
       <footer class="main-footer">
         <div class="footer-left">
           Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="#">Laboratorium Rekayasa Perangkat Lunak</a>
