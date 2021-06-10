@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Apr 2021 pada 15.24
+-- Waktu pembuatan: 10 Jun 2021 pada 16.22
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.4.16
 
@@ -33,7 +33,7 @@ CREATE TABLE `berita` (
   `judul_berita` varchar(100) NOT NULL,
   `gambar_berita` varchar(100) NOT NULL,
   `tanggalpost_berita` date NOT NULL,
-  `konten_berita` varchar(100) NOT NULL
+  `konten_berita` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -41,8 +41,8 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `id_kategori_berita`, `judul_berita`, `gambar_berita`, `tanggalpost_berita`, `konten_berita`) VALUES
-(3, 7, 'lounching web baru laboratorium rpl 2021', '', '2021-04-26', '<p><strong>Lounching website baru laboratorium rpl 2021</strong></p>'),
-(4, 1, 'praktikum basis data dengan website', '', '2021-05-02', '<p><strong>Pelaksanaan praktikum basis data di ITATS</strong></p><p>dilakukan dengan online</p>');
+(4, 2, 'Pelantikan Aslab LAB RPL 2018', '60c0bf5d86e04.IMG-20191114-WA0003[1].jpg', '2021-06-09', '<p><strong>Pelantikan Aslab Laboratorium Rekayasa Perangkat Lunak</strong></p><p>dengan pertemuan dari Kepala LAB RPL dan beberapa alumni aslab RPL</p>'),
+(6, 1, 'Makan makan Aslab', '60c0c07001c36.IMG-20210609-WA0010[1].jpg', '2021-06-09', '<p><strong>Makan-makan para alumni aslab rekayasa perangkat lunak&nbsp;</strong></p>');
 
 -- --------------------------------------------------------
 
@@ -78,8 +78,10 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id_gallery`, `id_kategori_gallery`, `caption_gallery`, `gambar_gallery`, `tanggal_gallery`) VALUES
-(1, 1, 'Seminar praktikum basweb 2020', '', '2021-01-27'),
-(5, 3, 'Lounching website terbaru lab RPL', '', '2021-03-31');
+(1, 1, 'makan-makan para alumni aslab', '60c0c0b052d0e.IMG-20210609-WA0010[1].jpg', '2021-06-09'),
+(7, 1, 'makan-makan para alumni aslab part 2', '60c0c0c933548.IMG-20210609-WA0010[1].jpg', '2021-06-10'),
+(9, 1, 'makan-makan para alumni aslab part 3', '60c0c0df81424.IMG-20210609-WA0010[1].jpg', '2021-06-11'),
+(10, 1, 'makan-makan para alumni aslab part 4', '60c0c1aab5c08.IMG-20210203-WA0012[1].jpg', '2021-06-12');
 
 -- --------------------------------------------------------
 
@@ -100,7 +102,9 @@ CREATE TABLE `halaman` (
 --
 
 INSERT INTO `halaman` (`id_halaman`, `gambar_halaman`, `judul_halaman`, `tanggalpost_halaman`, `konten_halaman`) VALUES
-(8, '6069bbfc189b2.Capture.PNG', 'Informasi laboraturium Rekayasa Perangkat Lunak ', '2021-04-04', '<p>qwertoppoiuytreasdfghjklkjhgfzxcvbnmjhv,hvjhyuv,</p>');
+(10, '60c0c132a1a71.IMG-20210203-WA0008[1].jpg', 'Makan makan Aslab', '2021-06-09', '<p>Makan-makan setelah rapat soal modul 1</p>'),
+(14, '60c0c1691ec5e.IMG-20210203-WA0012[1].jpg', 'Makan makan Aslab', '2021-06-09', '<p>Makan-makan setelah rapat soal modul 2</p>'),
+(16, '60c0d20ea08c6.IMG-20210609-WA0010[1].jpg', 'Makan makan Aslab', '2021-06-13', '<p>Makan-makan setelah rapat soal modul 3</p>');
 
 -- --------------------------------------------------------
 
@@ -118,9 +122,8 @@ CREATE TABLE `kategori_berita` (
 --
 
 INSERT INTO `kategori_berita` (`id_kategori_berita`, `nama_kategori_berita`) VALUES
-(1, 'praktikum basis data tahun 2021'),
-(2, 'seminar basis data tentang join table'),
-(7, 'pengujian web laboratorium ');
+(1, 'Pertemuan para Aslab'),
+(2, 'Pelantikan Aslab LAB RPL');
 
 -- --------------------------------------------------------
 
@@ -138,8 +141,7 @@ CREATE TABLE `kategori_gallery` (
 --
 
 INSERT INTO `kategori_gallery` (`id_kategori_gallery`, `nama_kategori_gallery`) VALUES
-(1, 'Seminar Lab RPL'),
-(3, 'Pelaksanaan lounching website Laboratorium Rekayasa Perangkat Lunak 2021');
+(1, 'Mukbang');
 
 -- --------------------------------------------------------
 
@@ -170,6 +172,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -177,6 +180,14 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Eric WA', 'ericwa', 'ericwahyu19@gmail.com', '2021-05-10 13:54:07', '123', NULL, NULL, NULL),
+(3, 'wahyu wah', 'wahyuwa', 'erickwahyu19@gmail.com', NULL, '1234', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -241,7 +252,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -253,25 +264,25 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `halaman`
 --
 ALTER TABLE `halaman`
-  MODIFY `id_halaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_halaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_berita`
 --
 ALTER TABLE `kategori_berita`
-  MODIFY `id_kategori_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kategori_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_gallery`
 --
 ALTER TABLE `kategori_gallery`
-  MODIFY `id_kategori_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kategori_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -283,7 +294,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
