@@ -86,6 +86,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
                   <li class="active"><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="table.aslab.php">Aslab</a></li>
                   <li><a class="nav-link" href="table.berita.php">Berita</a></li>
                   <li><a class="nav-link" href="table.gallery.php">Gallery</a></li>
                   <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>

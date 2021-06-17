@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jun 2021 pada 16.22
+-- Waktu pembuatan: 17 Jun 2021 pada 09.20
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.4.16
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_kape`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `aslab`
+--
+
+CREATE TABLE `aslab` (
+  `id_aslab` int(11) NOT NULL,
+  `id_kategori_aslab` int(11) NOT NULL,
+  `foto_aslab` text NOT NULL,
+  `nama_aslab` varchar(100) NOT NULL,
+  `tahun_angkatan` year(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `aslab`
+--
+
+INSERT INTO `aslab` (`id_aslab`, `id_kategori_aslab`, `foto_aslab`, `nama_aslab`, `tahun_angkatan`) VALUES
+(4, 1, '60cae8765a274.COVER.jpg', 'Eric Wa', 2018),
+(5, 2, '60cae92c6fc48.Capture1.PNG', 'Fernanda Putra Aditya', 2018);
 
 -- --------------------------------------------------------
 
@@ -104,7 +126,27 @@ CREATE TABLE `halaman` (
 INSERT INTO `halaman` (`id_halaman`, `gambar_halaman`, `judul_halaman`, `tanggalpost_halaman`, `konten_halaman`) VALUES
 (10, '60c0c132a1a71.IMG-20210203-WA0008[1].jpg', 'Makan makan Aslab', '2021-06-09', '<p>Makan-makan setelah rapat soal modul 1</p>'),
 (14, '60c0c1691ec5e.IMG-20210203-WA0012[1].jpg', 'Makan makan Aslab', '2021-06-09', '<p>Makan-makan setelah rapat soal modul 2</p>'),
-(16, '60c0d20ea08c6.IMG-20210609-WA0010[1].jpg', 'Makan makan Aslab', '2021-06-13', '<p>Makan-makan setelah rapat soal modul 3</p>');
+(16, '60c0d20ea08c6.IMG-20210609-WA0010[1].jpg', 'Makan makan Aslab', '2021-06-13', '<p>Makan-makan setelah rapat soal modul 3</p>'),
+(18, '60c8cf41c0916.COVER.jpg', 'Eric WA', '2021-06-15', '<p>Saya Bangga</p>');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kategori_aslab`
+--
+
+CREATE TABLE `kategori_aslab` (
+  `id_kategori_aslab` int(11) NOT NULL,
+  `kategori_aslab` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kategori_aslab`
+--
+
+INSERT INTO `kategori_aslab` (`id_kategori_aslab`, `kategori_aslab`) VALUES
+(1, 'alumni'),
+(2, 'aslab aktif');
 
 -- --------------------------------------------------------
 
@@ -141,7 +183,9 @@ CREATE TABLE `kategori_gallery` (
 --
 
 INSERT INTO `kategori_gallery` (`id_kategori_gallery`, `nama_kategori_gallery`) VALUES
-(1, 'Mukbang');
+(1, 'Mukbang'),
+(5, 'alumni'),
+(6, 'aslab aktif');
 
 -- --------------------------------------------------------
 
@@ -194,6 +238,12 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `pa
 --
 
 --
+-- Indeks untuk tabel `aslab`
+--
+ALTER TABLE `aslab`
+  ADD PRIMARY KEY (`id_aslab`);
+
+--
 -- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
@@ -218,6 +268,12 @@ ALTER TABLE `gallery`
 --
 ALTER TABLE `halaman`
   ADD PRIMARY KEY (`id_halaman`);
+
+--
+-- Indeks untuk tabel `kategori_aslab`
+--
+ALTER TABLE `kategori_aslab`
+  ADD PRIMARY KEY (`id_kategori_aslab`);
 
 --
 -- Indeks untuk tabel `kategori_berita`
@@ -249,6 +305,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `aslab`
+--
+ALTER TABLE `aslab`
+  MODIFY `id_aslab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
@@ -270,7 +332,13 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT untuk tabel `halaman`
 --
 ALTER TABLE `halaman`
-  MODIFY `id_halaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_halaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT untuk tabel `kategori_aslab`
+--
+ALTER TABLE `kategori_aslab`
+  MODIFY `id_kategori_aslab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_berita`
@@ -282,7 +350,7 @@ ALTER TABLE `kategori_berita`
 -- AUTO_INCREMENT untuk tabel `kategori_gallery`
 --
 ALTER TABLE `kategori_gallery`
-  MODIFY `id_kategori_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kategori_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`

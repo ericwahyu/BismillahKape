@@ -86,10 +86,10 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
                   <li><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.aslab.php">Aslab</a></li>
+                  <li class="active"><a class="nav-link" href="table.aslab.php">Aslab</a></li>
                   <li><a class="nav-link" href="table.berita.php">Berita</a></li>
                   <li><a class="nav-link" href="table.gallery.php">Gallery</a></li>
-                  <li class="active"><a class="nav-link" href="table.halaman.php">Halaman</a></li>
+                  <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
                 </ul>
               </li>
         </aside>
@@ -99,32 +99,42 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Form Halaman</h1>
+            <h1>Form Aslab</h1>
           </div>
 
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="../model/modelHalaman.php" method="post" enctype="multipart/form-data">
+                <form action="../model/modelAslab.php" method="post" enctype="multipart/form-data">
                   <div class="card-header">
-                    <h4>Insert Halaman</h4>
+                    <h4>Insert Aslab</h4>
                   </div>
                   <div class="card-body">
+                  <div class="mb-3">
+                      <label>Kategori Aslab</label>
+                      <select class="form-control" name="idkategori">
+                        <option selected>-- Pilih Kategori Berita --</option required>
+                        <?php
+                          require_once('../koneksi.php');
+
+                          $view= mysqli_query($koneksi, "SELECT * FROM KATEGORI_ASLAB");
+                          while($a = mysqli_fetch_array($view)):
+                        ?>
+                        <option value="<?php echo $a['id_kategori_aslab']?>"><?php echo $a['kategori_aslab']?></option>
+                        <?php endwhile; ?>
+                      </select>
+                    </div>
                     <div class="mb-3">
                       <label for="formFile">Pilih File Gambar</label>
                       <input class="form-control" type="file" id="formFile" name="gambar">
                     </div>
                     <div class="mb-3">
-                      <label for="judul">Judul Halaman</label>
-                      <input type="input" class="form-control" name="judul" placeholder="Masukkan Judul Halaman" id="judul" required>
+                      <label for="judul">Nama Aslab</label>
+                      <input type="input" class="form-control" name="nama" placeholder="Masukkan Nama Aslab" id="judul" required>
                     </div>
                     <div class="mb-3">
-                      <label for="tanggal">Tanggal Post Halaman</label>
-                      <input type="date" class="form-control" name="tanggal" id="tanggal" required>
-                    </div>
-                    <div class="mb-3">
-                      <label>Konten Halaman</label>
-                      <textarea class="form-control ckeditor" name="konten"></textarea required>
+                      <label for="tahun">Tahun Angkatan</label>
+                      <input type="input" class="form-control" name="tahun" placeholder="Masukkan Tahun Angkatan Aslab" id="tahun" required>
                     </div>
                   </div>
                   <div class="card-footer text-right bg-whitesmoke br">

@@ -84,11 +84,12 @@
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="table.kategoriberita.php">Table Kategori Berita</a></li>
-                  <li><a class="nav-link" href="table.kategorigallery.php">Table Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.berita.php">Table Berita</a></li>
-                  <li class="active"><a class="nav-link" href="table.gallery.php">Table Gallery</a></li>
-                  <li><a class="nav-link" href="table.halaman.php">Table Halaman</a></li>
+                  <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
+                  <li><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="table.aslab.php">Aslab</a></li>
+                  <li><a class="nav-link" href="table.berita.php">Berita</a></li>
+                  <li class="active"><a class="nav-link" href="table.gallery.php">Gallery</a></li>
+                  <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
                 </ul>
               </li>
         </aside>

@@ -86,9 +86,9 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
                   <li><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.aslab.php">Aslab</a></li>
+                  <li class="active"><a class="nav-link" href="table.aslab.php">Aslab</a></li>
                   <li><a class="nav-link" href="table.berita.php">Berita</a></li>
-                  <li class="active"><a class="nav-link" href="table.gallery.php">Gallery</a></li>
+                  <li><a class="nav-link" href="table.gallery.php">Gallery</a></li>
                   <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
                 </ul>
               </li>
@@ -99,41 +99,41 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Table Gallery</h1>
+            <h1>Table Asisten Lab</h1>
           </div>
 
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                <a href="form.gallery.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Tambah</a>
+                <a href="form.aslab.php" class="btn btn-icon icon-left btn-primary"><i class="fas fa-folder-plus"></i>  Tambah</a>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-bordered table-md">
                       <tr>
                         <th>#</th>
-                        <th>Nama Kategori Gallery</th>
-                        <th>Caption Gallery</th>
-                        <th>Gambar Gallery</th>
-                        <th>Tanggal Gallery</th>
+                        <th>Nama Kategori Aslab</th>
+                        <th>Foto Aslab</th>
+                        <th>Nama Aslab</th>
+                        <th>Angkatan Aslab</th>
                         <th>Aksi</th>
                       </tr>
                       <?php
                         include "../koneksi.php";
-                        $view = mysqli_query($koneksi, "SELECT * FROM gallery JOIN kategori_gallery ON gallery.id_kategori_gallery = kategori_gallery.id_kategori_gallery ORDER BY id_gallery ASC");
+                        $view = mysqli_query($koneksi, "SELECT * FROM aslab JOIN kategori_aslab ON aslab.id_kategori_aslab = kategori_aslab.id_kategori_aslab ORDER BY id_aslab ASC");
                         $index=1;
                         while($a = mysqli_fetch_array($view)):
                       ?>
                       <tr>
                         <td><?php echo $index?></td>
-                        <td><?php echo $sub_kalimat = substr($a['nama_kategori_gallery'],0,30)."...";?></td>
-                        <td><?php echo $sub_kalimat = substr($a['caption_gallery'],0,45)."...";?></td>
-                        <td><img src="../img/gallery/<?php echo $a['gambar_gallery'];?>" width="100"></td>
-                        <td><?php echo $a['tanggal_gallery']?></td>
+                        <td><?php echo $a['kategori_aslab'];?></td>
+                        <td><img src="../img/aslab/<?php echo $a['foto_aslab'];?>" width="100"></td>
+                        <td><?php echo $a['nama_aslab']?></td>
+                        <td><?php echo $a['tahun_angkatan']?></td>
                         <td class="d-flex m-2">
-                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>"><i class="fas fa-edit"></i>  Ubah</a>
-                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
+                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_aslab'];?>"><i class="fas fa-edit"></i>  Ubah</a>
+                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelAslab.php?id=<?php echo $a['id_aslab'];?>&delete&gambarlama=<?php echo $a['foto_aslab'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
                           <a href="#" class="badge badge-success" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_gallery'];?>"><i class="fas fa-info-circle"></i>  Detail</a>
                         </td>
                       </tr>
@@ -151,10 +151,10 @@
       </div>
 
       <?php
-        $select= mysqli_query($koneksi, "SELECT * FROM gallery JOIN kategori_gallery ON gallery.id_kategori_gallery = kategori_gallery.id_kategori_gallery");
+        $select= mysqli_query($koneksi, "SELECT * FROM aslab JOIN kategori_aslab ON aslab.id_kategori_aslab = kategori_aslab.id_kategori_aslab");
         while($b = mysqli_fetch_array($select)):
       ?>
-      <div class="modal fade" id="modalupdate<?php echo $b['id_gallery'];?>" tabindex="-1">
+      <div class="modal fade" id="modalupdate<?php echo $b['id_aslab'];?>" tabindex="-1">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -164,33 +164,33 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="../model/modelGallery.php" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?php echo $b['id_gallery']?>">
-                <input type="hidden" name="gambarlama" value="<?php echo $b['gambar_gallery'];?>">
+              <form action="../model/modelAslab.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php echo $b['id_aslab']?>">
+                <input type="hidden" name="gambarlama" value="<?php echo $b['foto_aslab'];?>">
                 <div class="mb-3">
                   <label for="formFile">File Gambar</label> <br>
-                  <img src="../img/gallery/<?php echo $b['gambar_gallery'];?>" width="200">
+                  <img src="../img/aslab/<?php echo $b['foto_aslab'];?>" width="200">
                   <input class="form-control" type="file" id="formFile" name="gambar">
                 </div>
                 <div class="mb-3">
-                  <label>Nama Kategori Gallery</label>
+                  <label>Kategori Aslab</label>
                   <select class="form-control" name="idkategori">
-                    <option selected value="<?php echo $b['id_kategori_gallery'];?>"><?php echo $b['nama_kategori_gallery'];?></option required>
+                    <option selected value="<?php echo $b['id_kategori_aslab'];?>"><?php echo $b['kategori_aslab'];?></option required>
                     <?php
-                      $idkategori= mysqli_query($koneksi, "SELECT * FROM KATEGORI_GALLERY");
+                      $idkategori= mysqli_query($koneksi, "SELECT * FROM kategori_aslab");
                       while($c = mysqli_fetch_array($idkategori)):
                     ?>
-                    <option value="<?php echo $c['id_kategori_gallery'];?>"><?php echo $c['nama_kategori_gallery'];?></option>
+                    <option value="<?php echo $c['id_kategori_aslab'];?>"><?php echo $c['kategori_aslab'];?></option>
                     <?php endwhile;?>
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label for="caption" class="form-label">Caption Gallery</label>
-                  <input type="text" class="form-control" id="caption" name="caption" value="<?php echo $b['caption_gallery']?>">
+                  <label for="nama" class="form-label">Nama Aslab</label>
+                  <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $b['nama_aslab']?>">
                 </div>
                 <div class="mb-3">
-                  <label for="tanggal" class="form-label">Tanggal gallery</label>
-                  <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?php echo $b['tanggal_gallery']?>">
+                  <label for="tahun" class="form-label">Tahun Angkatan Aslab</label>
+                  <input type="input" class="form-control" id="tahun" name="tahun" value="<?php echo $b['tahun_angkatan']?>">
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

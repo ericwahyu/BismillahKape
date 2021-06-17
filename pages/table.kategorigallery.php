@@ -86,6 +86,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
                   <li class="active"><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
+                  <li><a class="nav-link" href="table.aslab.php">aslab</a></li>
                   <li><a class="nav-link" href="table.berita.php">Berita</a></li>
                   <li><a class="nav-link" href="table.gallery.php">Gallery</a></li>
                   <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
@@ -123,7 +124,7 @@
                         while($a = mysqli_fetch_array($view)):
                       ?>
                       <tr>
-                        <td>1</td>
+                        <td><?php echo $index; ?></td>
                         <td><?php echo $a['nama_kategori_gallery'];?></td>
                         <td>
                           <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_kategori_gallery'];?>"><i class="fas fa-edit"></i>  Ubah</a>
