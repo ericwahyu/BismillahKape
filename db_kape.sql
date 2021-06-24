@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Jun 2021 pada 09.20
+-- Waktu pembuatan: 24 Jun 2021 pada 16.20
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.4.16
 
@@ -24,24 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `aslab`
+-- Struktur dari tabel `anggota`
 --
 
-CREATE TABLE `aslab` (
-  `id_aslab` int(11) NOT NULL,
-  `id_kategori_aslab` int(11) NOT NULL,
-  `foto_aslab` text NOT NULL,
-  `nama_aslab` varchar(100) NOT NULL,
-  `tahun_angkatan` year(4) NOT NULL
+CREATE TABLE `anggota` (
+  `id_anggota` int(11) NOT NULL,
+  `id_kategori_anggota` int(11) NOT NULL,
+  `foto_anggota` text NOT NULL,
+  `nama_anggota` varchar(100) NOT NULL,
+  `jabatan_anggota` varchar(100) NOT NULL,
+  `tahun_angkatan` year(4) NOT NULL,
+  `pekerjaan_anggota` varchar(100) NOT NULL,
+  `pesankesan_anggota` text NOT NULL,
+  `name_instagram` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `aslab`
+-- Dumping data untuk tabel `anggota`
 --
 
-INSERT INTO `aslab` (`id_aslab`, `id_kategori_aslab`, `foto_aslab`, `nama_aslab`, `tahun_angkatan`) VALUES
-(4, 1, '60cae8765a274.COVER.jpg', 'Eric Wa', 2018),
-(5, 2, '60cae92c6fc48.Capture1.PNG', 'Fernanda Putra Aditya', 2018);
+INSERT INTO `anggota` (`id_anggota`, `id_kategori_anggota`, `foto_anggota`, `nama_anggota`, `jabatan_anggota`, `tahun_angkatan`, `pekerjaan_anggota`, `pesankesan_anggota`, `name_instagram`) VALUES
+(8, 1, '60ceb4749ccf6.+62 858-9436-4025 20190722_003201 - Katsrur Rizqi Aviva.jpg', 'Katsrur Rizqi Aviva', 'Asisten laboratorium', 2015, 'Bekerja bidang IT-Technical Writer', 'menambah ilmu dan menambah pengalaman berorganisasi', ''),
+(9, 1, '60ceb49861865.20200809_163121 - Tri Swasono Himawan.jpg', 'Tri Swasono Himawan', 'Asisten laboratorium', 2013, 'Staff Operasional', 'Asik, menantang, belajar hal-hal baru diluar edukasi perkuliahan. Lebih perbarui soal hardware, biar dapat bereksperimen lebih. Terima kasih', ''),
+(10, 1, '60ceb7df33e21.IMG_20210511_130342 - Bagus Eko.jpg', 'Bagus Eko Prasetyo', 'Admin Lab', 2019, 'Programmer di Pusat Sistem Informasi ITATS', 'Semangat Menikmati Proses Belajar, Terkadang Indomie yang katanya instan nyatanya juga memerlukan beberapa proses. ', ''),
+(11, 1, '60cebb6db8990.IMG_20151114_152347 - Muhammad Rifqi Arifandi.jpg', 'Muhammad Rifqi Arifandi', 'Asisten laboratorium', 2013, 'Merintis usaha WiFi', 'Pesan : banyak mencari ilmu, Kesan : amazing', ''),
+(12, 2, '60d31a6a23982.IMG20210601161617_mh1622566231559_mr1622569613385_1_-removebg-preview.png', 'Fernanda Putra aditya', 'Asisten laboratorium', 2018, 'Fokus kuliah dengan segala laporan dan project, dan sedang bekerja di Snack Bowl Surabaya', 'Pesan : Untuk aslab periode berikutnya, semoga lebih baik dalam mengelola sistem di dalam Lab. RPL serta melaksanakan tugas dengan baik dan semoga Lab. RPL bisa lebih baik lagi dalam hal sistem praktikum dan pengelolaan infrastruktur di dalam Lab. RPL Kesan : To be honored menjadi asisten lab apalagi menjadi Asisten Lab. RPL. Proud of my self, karena bisa melaksanakan tugas dengan baik dan juga untuk teman teman aslab se periode sangat mantappu jiwa. Terimakasih untuk 2 periode yang sudah dilalui dengan sangat baik. Aku sayang kalian.', 'putraadityafernanda'),
+(13, 2, '60d318b6520a5.WhatsApp_Image_2021-06-19_at_23.24.19_-_Michael-removebg-preview.png', 'Michael Araona Wily', 'Koordinator Laboratorium', 2018, 'KP,KKN,Kerja , dll', 'Menyenangkan', ''),
+(14, 1, '60d31fd6167b0.IMG_20200823_110701 - Tommy Ferdian Hadimarta.jpg', 'Tommy Ferdian Hadimarta', 'Asisten laboratorium', 2014, 'Software Engginer', 'Senang bisa sharing ilmu dan punya banyak kenalan', ''),
+(15, 1, '60d3203b1d284.20201202_123229 - moch irfan.jpg', 'Moch. Irfan Chanafi', 'Asisten laboratorium', 2015, 'STAFF IT', 'Alhamdulillah bermanfaat', ''),
+(16, 2, '60d3212c1af5f.20181008_070736 - Sita Fara Yunanda.jpg', 'Sita Fara Yunanda', 'Asisten laboratorium', 2018, '', '', ''),
+(17, 2, '60d4867fae06a.Odila_Untuk lab - Odila Windy Astuti Halimaking.png', 'Odila Windy Astuti Halimaking', 'Asisten laboratorium', 2018, 'Mahasiswa Akhir ', 'Menjadi Aslab Bukan untuk balas dendam Tetapi Menjadikan lebih baik dari praktikum sebelumnya. ', '');
 
 -- --------------------------------------------------------
 
@@ -63,8 +75,8 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `id_kategori_berita`, `judul_berita`, `gambar_berita`, `tanggalpost_berita`, `konten_berita`) VALUES
-(4, 2, 'Pelantikan Aslab LAB RPL 2018', '60c0bf5d86e04.IMG-20191114-WA0003[1].jpg', '2021-06-09', '<p><strong>Pelantikan Aslab Laboratorium Rekayasa Perangkat Lunak</strong></p><p>dengan pertemuan dari Kepala LAB RPL dan beberapa alumni aslab RPL</p>'),
-(6, 1, 'Makan makan Aslab', '60c0c07001c36.IMG-20210609-WA0010[1].jpg', '2021-06-09', '<p><strong>Makan-makan para alumni aslab rekayasa perangkat lunak&nbsp;</strong></p>');
+(4, 1, 'Praktikum Pemrograman Berbasis Objek', '60c0bf5d86e04.IMG-20191114-WA0003[1].jpg', '2021-06-19', '<p><strong>Pelaksanaan Praktikum Pemrograman Berbasis Objek Periode VI</strong></p><p>praktikum akan di laksanakan pada tanggal 30 juni 2021, praktikum dilakukan di Laboratorium Rekayasa Perangkat Lunak&nbsp;</p><p>&nbsp;</p>'),
+(6, 2, 'Praktikum Basis Data', '60c0c07001c36.IMG-20210609-WA0010[1].jpg', '2021-07-30', '<p><strong>Pelaksanaan Praktikum Basis Data&nbsp;Periode V</strong></p><p>praktikum akan di laksanakan pada tanggal 3&nbsp;maret&nbsp;2022, praktikum dilakukan di Laboratorium Rekayasa Perangkat Lunak&nbsp;</p>');
 
 -- --------------------------------------------------------
 
@@ -92,18 +104,20 @@ CREATE TABLE `gallery` (
   `id_kategori_gallery` int(11) NOT NULL,
   `caption_gallery` varchar(100) NOT NULL,
   `gambar_gallery` varchar(100) NOT NULL,
-  `tanggal_gallery` date NOT NULL
+  `tanggal_gallery` date NOT NULL,
+  `deskripsi_gallery` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `gallery`
 --
 
-INSERT INTO `gallery` (`id_gallery`, `id_kategori_gallery`, `caption_gallery`, `gambar_gallery`, `tanggal_gallery`) VALUES
-(1, 1, 'makan-makan para alumni aslab', '60c0c0b052d0e.IMG-20210609-WA0010[1].jpg', '2021-06-09'),
-(7, 1, 'makan-makan para alumni aslab part 2', '60c0c0c933548.IMG-20210609-WA0010[1].jpg', '2021-06-10'),
-(9, 1, 'makan-makan para alumni aslab part 3', '60c0c0df81424.IMG-20210609-WA0010[1].jpg', '2021-06-11'),
-(10, 1, 'makan-makan para alumni aslab part 4', '60c0c1aab5c08.IMG-20210203-WA0012[1].jpg', '2021-06-12');
+INSERT INTO `gallery` (`id_gallery`, `id_kategori_gallery`, `caption_gallery`, `gambar_gallery`, `tanggal_gallery`, `deskripsi_gallery`) VALUES
+(1, 10, 'Persiapan pelaksanan webinar relasi antar objek pada OOP', '60cea2a0b068d.IMG-20201117-WA0031[2].jpg', '2021-02-09', 'Persiapan webinar bertujuan untuk para praktikan yang mengikuti praktikum Pemrograman Berbasis Objek lebih mengerti macam-macam dan kegunaan relasi antar objek pada OOP  '),
+(9, 8, 'Makan-makan setelah mengadakan rapat pembahasan soal praktikum pemrograman berbasis objek', '60cea0dcb851f.IMG-20210203-WA0012[1].jpg', '2021-03-10', 'menyelesaikan rapat pembahasan soal praktikum dan metode penilaian praktikum'),
+(10, 1, 'Liburan ke pantai Pasir Putih Kediri setelah selesai pelaksanaan praktikum Pemrograman Berbasis Obje', '60cea32581660.IMG-20210619-WA0011[1].jpg', '2021-04-11', 'Liburan para Asisten lab setelah menyelesaikan pelaksanaan praktikum PBO'),
+(11, 7, 'Buka bersama seluruh Aslab Teknik Informatika Itats ', '60cea3907169a.IMG-20210619-WA0012[1].jpg', '2021-04-12', 'Menjalankan berbuka puasa bersama diikuti oleh kepala asisten laboratorium bahasa pemrograman, rpl, dan jarkom. '),
+(12, 9, 'Pelantikan resmi Aslab aktif angkatan tahun 2018 pada praktikum PBO 2020 periode VI', '60cea408d7366.IMG-20191114-WA0006[1].jpg', '2021-05-18', 'Pelantikan Asisten Laboratorium Rekayasa Perangkat Lunak tahun angkatan 2018, di hadiri oleh KA lab RPL dan juga Aslab senior yang memberi arahan untuk aslab baru');
 
 -- --------------------------------------------------------
 
@@ -124,29 +138,30 @@ CREATE TABLE `halaman` (
 --
 
 INSERT INTO `halaman` (`id_halaman`, `gambar_halaman`, `judul_halaman`, `tanggalpost_halaman`, `konten_halaman`) VALUES
-(10, '60c0c132a1a71.IMG-20210203-WA0008[1].jpg', 'Makan makan Aslab', '2021-06-09', '<p>Makan-makan setelah rapat soal modul 1</p>'),
-(14, '60c0c1691ec5e.IMG-20210203-WA0012[1].jpg', 'Makan makan Aslab', '2021-06-09', '<p>Makan-makan setelah rapat soal modul 2</p>'),
-(16, '60c0d20ea08c6.IMG-20210609-WA0010[1].jpg', 'Makan makan Aslab', '2021-06-13', '<p>Makan-makan setelah rapat soal modul 3</p>'),
-(18, '60c8cf41c0916.COVER.jpg', 'Eric WA', '2021-06-15', '<p>Saya Bangga</p>');
+(10, '60d192279a7cc.IMG-20210620-WA0000[1].jpg', 'Asistensi Praktikum', '2021-06-08', '<p>Waktu asistensi praktikan kepada Asisten&nbsp;Laboratorium saat praktikum Pemrograman Berbasis Ob'),
+(14, '60d192b9c0ba4.IMG-20210620-WA0002[1].jpg', 'Pelaksanaan Praktikum PBO 2019', '2021-06-11', '<p>Pengawasan Asisten Lab kepada praktikan malam ketika berlangsungnya kegiatan praktikum Pemrograma'),
+(16, '60d1936fd1c18.IMG-20210620-WA0004[1].jpg', 'Persiapan Praktikum ', '2021-06-16', '<p>Persiapan materi dan metode penilaian Praktikum Basis Data tahun 2019</p>'),
+(19, '60d194b025af4.IMG-20210620-WA0001[1].jpg', 'Praktikum Basis Data', '2021-06-16', '<p>Pelaksanaan Praktikum Basis Data di Laboratorium RPL modul 1, berlangsung dengan hikmat</p>');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori_aslab`
+-- Struktur dari tabel `kategori_anggota`
 --
 
-CREATE TABLE `kategori_aslab` (
-  `id_kategori_aslab` int(11) NOT NULL,
-  `kategori_aslab` varchar(100) NOT NULL
+CREATE TABLE `kategori_anggota` (
+  `id_kategori_anggota` int(11) NOT NULL,
+  `nama_kategori_anggota` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kategori_aslab`
+-- Dumping data untuk tabel `kategori_anggota`
 --
 
-INSERT INTO `kategori_aslab` (`id_kategori_aslab`, `kategori_aslab`) VALUES
+INSERT INTO `kategori_anggota` (`id_kategori_anggota`, `nama_kategori_anggota`) VALUES
 (1, 'alumni'),
-(2, 'aslab aktif');
+(2, 'aslab aktif'),
+(3, 'Kepala Asisten Laboratorium');
 
 -- --------------------------------------------------------
 
@@ -164,8 +179,8 @@ CREATE TABLE `kategori_berita` (
 --
 
 INSERT INTO `kategori_berita` (`id_kategori_berita`, `nama_kategori_berita`) VALUES
-(1, 'Pertemuan para Aslab'),
-(2, 'Pelantikan Aslab LAB RPL');
+(1, 'Praktikum Pemrograman Berbasis Objek'),
+(2, 'Praktikum Basis Data');
 
 -- --------------------------------------------------------
 
@@ -183,9 +198,11 @@ CREATE TABLE `kategori_gallery` (
 --
 
 INSERT INTO `kategori_gallery` (`id_kategori_gallery`, `nama_kategori_gallery`) VALUES
-(1, 'Mukbang'),
-(5, 'alumni'),
-(6, 'aslab aktif');
+(1, 'Liburan'),
+(7, 'Buka Bersama'),
+(8, 'Makan-makan'),
+(9, 'Pelantikan Aslab Baru'),
+(10, 'Rapat');
 
 -- --------------------------------------------------------
 
@@ -238,10 +255,10 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `pa
 --
 
 --
--- Indeks untuk tabel `aslab`
+-- Indeks untuk tabel `anggota`
 --
-ALTER TABLE `aslab`
-  ADD PRIMARY KEY (`id_aslab`);
+ALTER TABLE `anggota`
+  ADD PRIMARY KEY (`id_anggota`);
 
 --
 -- Indeks untuk tabel `berita`
@@ -270,10 +287,10 @@ ALTER TABLE `halaman`
   ADD PRIMARY KEY (`id_halaman`);
 
 --
--- Indeks untuk tabel `kategori_aslab`
+-- Indeks untuk tabel `kategori_anggota`
 --
-ALTER TABLE `kategori_aslab`
-  ADD PRIMARY KEY (`id_kategori_aslab`);
+ALTER TABLE `kategori_anggota`
+  ADD PRIMARY KEY (`id_kategori_anggota`);
 
 --
 -- Indeks untuk tabel `kategori_berita`
@@ -305,10 +322,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `aslab`
+-- AUTO_INCREMENT untuk tabel `anggota`
 --
-ALTER TABLE `aslab`
-  MODIFY `id_aslab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `anggota`
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `berita`
@@ -326,19 +343,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `halaman`
 --
 ALTER TABLE `halaman`
-  MODIFY `id_halaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_halaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori_aslab`
+-- AUTO_INCREMENT untuk tabel `kategori_anggota`
 --
-ALTER TABLE `kategori_aslab`
-  MODIFY `id_kategori_aslab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `kategori_anggota`
+  MODIFY `id_kategori_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_berita`
@@ -350,7 +367,7 @@ ALTER TABLE `kategori_berita`
 -- AUTO_INCREMENT untuk tabel `kategori_gallery`
 --
 ALTER TABLE `kategori_gallery`
-  MODIFY `id_kategori_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kategori_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`

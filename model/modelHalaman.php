@@ -17,7 +17,6 @@
         $judul = $_POST['judul'];
         $tanggal = $_POST['tanggal'];
         $konten = $_POST['konten'];
-        $idkategori = $_POST['idkategori'];
 
         // pengecekan file
         if($gambarError == 4){
@@ -41,7 +40,7 @@
 
             //upload gambar
             move_uploaded_file($gambarTmp,'../img/halaman/'.$gambarNamenew);
-            $input = mysqli_query($koneksi,"INSERT INTO HALAMAN VALUES ('', '$idkategori','$gambarNamenew','$judul', '$tanggal', '$konten')");
+            $input = mysqli_query($koneksi,"INSERT INTO HALAMAN VALUES ('','$gambarNamenew','$judul', '$tanggal', '$konten')");
                 if($input){
                     echo "<script>
                             alert('Data berhasil di tambah !'); window.location='../pages/table.halaman.php ';

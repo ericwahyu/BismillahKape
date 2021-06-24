@@ -14,21 +14,25 @@
         $gambarTmp = $_FILES['gambar']['tmp_name'];
 
         //ekstensi post
-        $nama = $_POST['nama'];
-        $tahun = $_POST['tahun'];
         $idkategori = $_POST['idkategori'];
+        $nama = $_POST['nama'];
+        $jabatan = $_POST['jabatan'];
+        $tahun = $_POST['tahun'];
+        $pekerjaan = $_POST['pekerjaan'];
+        $pesan = $_POST['pesan'];
+        $instagram = $_POST['instagram'];
 
         // pengecekan file
         if($gambarError == 4){
             //notif
             echo "<script>
-                  alert('Silahkan pilih file gambar terlebih dahulu !'); window.location='../pages/form.aslab.php ';
+                  alert('Silahkan pilih file gambar terlebih dahulu !'); window.location='../pages/form.anggota.php ';
                 </script>";
             return false;
         }else if($gambarType != "image/png" and $gambarType != "image/jpeg"){
             //notif
             echo "<script>
-                  alert('Yang anda upload bukan file gambar !'); window.location='../pages/form.aslab.php ';
+                  alert('Yang anda upload bukan file gambar !'); window.location='../pages/form.anggota.php ';
                 </script>";
             return false;
         // lolos pengecekan file gambar
@@ -39,11 +43,11 @@
             $gambarNamenew .= $gambarName;
 
             //upload gambar
-            move_uploaded_file($gambarTmp,'../img/aslab/'.$gambarNamenew);
-            $input = mysqli_query($koneksi,"INSERT INTO aslab VALUES ('', '$idkategori','$gambarNamenew','$nama', '$tahun')");
+            move_uploaded_file($gambarTmp,'../img/anggota/'.$gambarNamenew);
+            $input = mysqli_query($koneksi,"INSERT INTO anggota VALUES ('', '$idkategori','$gambarNamenew','$nama','$jabatan', '$tahun', '$pekerjaan', '$pesan', '$instagram')");
                 if($input){
                     echo "<script>
-                            alert('Data berhasil di tambah !'); window.location='../pages/table.aslab.php ';
+                            alert('Data berhasil di tambah !'); window.location='../pages/table.anggota.php ';
                         </script>";
                     return false;
                 }
@@ -57,8 +61,13 @@
 
         //ekstensi post
         $id = $_POST['id'];
+        $idkategori = $_POST['idkategori'];
         $nama = $_POST['nama'];
+        $jabatan = $_POST['jabatan'];
         $tahun = $_POST['tahun'];
+        $pekerjaan = $_POST['pekerjaan'];
+        $pesan = $_POST['pesan'];
+        $instagram = $_POST['instagram'];
 
         //ekstensi file lama
         $gambarLama = $_POST['gambarlama'];
@@ -67,15 +76,15 @@
             $gambarNamenew = $gambarLama;
         }else if($gambarType != "image/png" and $gambarType != "image/jpeg"){
             echo "<script>
-                  alert('Yang anda upload bukan file gambar !'); window.location='../pages/table.aslab.php ';
+                  alert('Yang anda upload bukan file gambar !'); window.location='../pages/table.anggota.php ';
                 </script>";
             return false;
         // lolos pengecekan file gambar
         }else{
             //hapus gambar lama
-            $gambar = glob('../img/aslab/*');
+            $gambar = glob('../img/anggota/*');
             foreach($gambar as $gam){
-                if($gam == "../img/aslab/$gambarLama"){
+                if($gam == "../img/anggota/$gambarLama"){
                 unlink($gam);
                 }
             }
@@ -86,11 +95,11 @@
 
         }
         //upload gambar baru
-        move_uploaded_file($gambarTmp,'../img/aslab/'.$gambarNamenew);
-        $edit = mysqli_query($koneksi,"UPDATE aslab SET foto_aslab='$gambarNamenew', nama_aslab='$nama', tahun_angkatan='$tahun' WHERE id_aslab='$id'");
+        move_uploaded_file($gambarTmp,'../img/anggota/'.$gambarNamenew);
+        $edit = mysqli_query($koneksi,"UPDATE anggota SET foto_anggota='$gambarNamenew', id_kategori_anggota='$idkategori', nama_anggota='$nama', jabatan_anggota='$jabatan', tahun_angkatan='$tahun' , pekerjaan_anggota='$pekerjaan', pesankesan_anggota='$pesan', name_instagram='$instagram' WHERE id_anggota='$id'");
             if($edit){
               echo "<script>
-                alert('Data berhasil terupdate !'); window.location='../pages/table.aslab.php ';
+                alert('Data berhasil terupdate !'); window.location='../pages/table.anggota.php ';
               </script>";
               return false;
         }
@@ -102,23 +111,22 @@
         //ekstensi file lama
         $gambarLama = $_GET['gambarlama'];
 
+        // var_dump($id);
+        // var_dump($gambarLama);
+        // die;
         //file hapus gambar
-        $gambar = glob('../img/aslab/*');
+        $gambar = glob('../img/anggota/*');
         foreach($gambar as $gam){
-            if($gam == "../img/aslab/$gambarLama"){
+            if($gam == "../img/anggota/$gambarLama"){
                unlink($gam);
                //hapus database
-            }else{
-                echo "<script>
-                alert('Data gagal terhapus !'); window.location='../pages/table.aslab.php ';
-                </script>";
-                return false;
+               break;
             }
         }
-            $hapus = mysqli_query($koneksi,"DELETE FROM aslab WHERE id_aslab = '$id'");
+            $hapus = mysqli_query($koneksi,"DELETE FROM anggota WHERE id_anggota = '$id'");
             if($hapus){
                 echo "<script>
-                        alert('Data berhasil terhapus !'); window.location='../pages/table.aslab.php ';
+                        alert('Data berhasil terhapus !'); window.location='../pages/table.anggota.php ';
                     </script>";
                     return false;
             }

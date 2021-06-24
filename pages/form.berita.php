@@ -5,6 +5,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Admin Laboratorium Rekayasa Perangkat Lunak</title>
 
+  <link href="../img/logo lap.jpg" rel="icon">
+
   <!-- General CSS Files -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -72,21 +74,21 @@
             <a href="index.html">Lab</a>
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
+            <!-- <li class="menu-header">Dashboard</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
                   <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li class="menu-header">Management</li>
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
                   <li><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.aslab.php">aslab</a></li>
+                  <li><a class="nav-link" href="table.anggota.php">Anggota</a></li>
                   <li class="active"><a class="nav-link" href="table.berita.php">Berita</a></li>
                   <li><a class="nav-link" href="table.gallery.php">Gallery</a></li>
                   <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>

@@ -5,6 +5,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Admin Laboratorium Rekayasa Perangkat Lunak</title>
 
+  <link href="../img/logo lap.jpg" rel="icon">
+
   <!-- General CSS Files -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -72,21 +74,21 @@
             <a href="index.html">Lab</a>
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
+            <!-- <li class="menu-header">Dashboard</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
                   <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li class="menu-header">Management</li>
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
                   <li><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
-                  <li><a class="nav-link" href="table.aslab.php">Aslab</a></li>
+                  <li><a class="nav-link" href="table.anggota.php">Anggota</a></li>
                   <li><a class="nav-link" href="table.berita.php">Berita</a></li>
                   <li class="active"><a class="nav-link" href="table.gallery.php">Gallery</a></li>
                   <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
@@ -117,6 +119,7 @@
                         <th>Caption Gallery</th>
                         <th>Gambar Gallery</th>
                         <th>Tanggal Gallery</th>
+                        <th>Deskripsi Gallery</th>
                         <th>Aksi</th>
                       </tr>
                       <?php
@@ -131,6 +134,7 @@
                         <td><?php echo $sub_kalimat = substr($a['caption_gallery'],0,45)."...";?></td>
                         <td><img src="../img/gallery/<?php echo $a['gambar_gallery'];?>" width="100"></td>
                         <td><?php echo $a['tanggal_gallery']?></td>
+                        <td><?php echo $a['deskripsi_gallery']?></td>
                         <td class="d-flex m-2">
                           <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_gallery'];?>"><i class="fas fa-edit"></i>  Ubah</a>
                           <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelGallery.php?id=<?php echo $a['id_gallery'];?>&delete&gambarlama=<?php echo $a['gambar_gallery'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
@@ -191,6 +195,10 @@
                 <div class="mb-3">
                   <label for="tanggal" class="form-label">Tanggal gallery</label>
                   <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?php echo $b['tanggal_gallery']?>">
+                </div>
+                <div class="mb-3">
+                  <label for="deskripsi" class="form-label">Deskripsi Gallery</label>
+                  <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?php echo $b['deskripsi_gallery']?>">
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

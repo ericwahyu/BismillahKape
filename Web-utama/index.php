@@ -52,6 +52,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#faq">Berita</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#alumni">Alumni</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
@@ -75,7 +76,7 @@
             </ul> -->
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+          <!-- <li><a class="getstarted scrollto" href="#">Update News</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -92,7 +93,7 @@
           <h1 data-aos="fade-up">Welcome to Laboratorium Rekayasa Perangkat Lunak</h1>
           <h2 data-aos="fade-up" data-aos-delay="400"></h2>
           <div data-aos="fade-up" data-aos-delay="800">
-            <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+            <a href="#faq" class="btn-get-started scrollto">Update News</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -106,16 +107,16 @@
   <main id="main">
 
     <!-- ======= Clients Section ======= -->
-    <!-- <section id="clients" class="clients clients">
+    <section id="clients" class="clients">
       <div class="container">
 
         <div class="row">
 
           <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="zoom-in">
+            <img src="" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
 
-          <div class="col-lg-2 col-md-4 col-6">
+          <!-- <div class="col-lg-2 col-md-4 col-6">
             <img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
           </div>
 
@@ -133,16 +134,16 @@
 
           <div class="col-lg-2 col-md-4 col-6">
             <img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
-          </div>
+          </div> -->
 
         </div>
 
       </div>
-    </section> -->
+    </section>
     <!-- End Clients Section -->
 
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about pt-5">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -152,22 +153,20 @@
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Laboratorium Rekayasa Perangkat Lunak Teknik Informatika ITATS sebagai tempat melakukan kegiatan praktikum serta melakukan penelitian suatu proyek Perangkat Lunak.
+              Sebagian besar Laboratorium RPL ini memiliki program praktikum sebagai berikut :
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Pemrograman Berbasis Objek</li>
+              <li><i class="ri-check-double-line"></i> Basis Data</li>
             </ul>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Pada Laboratorium Rekayasa Perangkat Lunak Memiliki fasilitas yang cukup mumpuni yakni tersedia cukup banyak komputer yang bisa digunakan,
+              mempunyai tempat yang sejuk agar proses pembelajaran terasa nyaman, serta memiliki akses free wifi.
             </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
+            <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
           </div>
         </div>
 
@@ -188,33 +187,33 @@
               <div class="row">
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="bi bi-emoji-smile"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Praktikum</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
                     <i class="bi bi-journal-richtext"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Praktikum</strong> yaitu pada semester ganjil akan di laksanakan praktikum Pemrograman Berbasis Objek, dan pada semester genap dilaksanakan praktikum Basis Data.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-file-person"></i>
                     <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Asisten Aslab Aktif</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
+                    <p><strong>Asisten Aslab Aktif</strong> yang bertugas membantu dan menuntun para praktikan untuk menyesaikan masalah pada waktu praktikum berlangsung.</p>
                   </div>
                 </div>
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="bi bi-clock"></i>
+                    <i class="bi bi-people"></i>
                     <span data-purecounter-start="0" data-purecounter-end="118" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Peserta Praktikum</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
+                    <p><strong>Peserta Praktikum</strong> yang mengikuti praktikum Basis data pada periode VI tahun 2021.</p>
                   </div>
                 </div>
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="bi bi-award"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et nemo pad der</p>
+                    <i class="bi bi-laptop"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Computer</strong> yang di gunakan untuk waktu berlangsungnya kegiatan praktkum.</p>
                   </div>
                 </div>
               </div>
@@ -224,6 +223,89 @@
 
       </div>
     </section><!-- End Counts Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>BERITA</h2>
+        </div>
+
+        <?php
+          $berita = mysqli_query($koneksi, "SELECT * FROM BERITA ORDER BY id_berita DESC Limit 4");
+          while($b = mysqli_fetch_array($berita)):
+        ?>
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4><?php echo $b['judul_berita'] ?></h4>
+            <h6 style="text-align: left; margin-left: 33px;"><?php echo date("d F, Y", strtotime($b['tanggalpost_berita'])) ?></h6>
+          </div>
+          <div class="col-lg-7">
+            <p>
+            <?php echo $b['konten_berita'] ?>
+            </p>
+            <a href="https://labinformatika.itats.ac.id/informasi?lab=rpl" class="btn-get-started scrollto ">Lihat Detail</a>
+          </div>
+        </div>
+        <?php endwhile; ?>
+
+        <!-- <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
+            </p>
+          </div>
+        </div> -->
+
+
+        <!-- <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
+            </p>
+          </div>
+        </div> -->
+
+
+        <!-- <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Aperiam itaque sit optio et deleniti eos nihil quidem cumque. Voluptas dolorum accusantium sunt sit enim. Provident consequuntur quam aut reiciendis qui rerum dolorem sit odio. Repellat assumenda soluta sunt pariatur error doloribus fuga.
+            </p>
+          </div>
+        </div> -->
+
+
+        <!-- <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+            </p>
+          </div>
+        </div> -->
+
+
+      </div>
+    </section>
+    <!-- End F.A.Q Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -239,7 +321,7 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">Kegiatan Laboratorium</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <p class="description">Kegiatan yang dilakukan diluar waktu praktikum seperti penyusunan materi praktikum, menyusun penilaian praktikum, dan persiapan pembukaan praktikum.</p>
             </div>
           </div>
 
@@ -247,7 +329,7 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4 class="title"><a href="">Kegiatan Praktikum</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <p class="description">Para Asisten Laboratorium melakukan praktikum secara online via google classroom dan google meet.</p>
             </div>
           </div>
 
@@ -255,7 +337,7 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4 class="title"><a href="">Webinar</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <p class="description">Dilaksanakan saat para Asisten Laboratorium memberikan materi praktikum agar praktikan mudah memahami.</p>
             </div>
           </div>
 
@@ -263,7 +345,7 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4 class="title"><a href="">Pengabdian Masyarakat</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <p class="description">Para Asisten Laboratorium membantu masyarakat untuk mengenalkan atau memberi arahan tentang teknologi yang digunakan sekarang ini.</p>
             </div>
           </div>
 
@@ -287,7 +369,7 @@
             </div>
           </div> -->
           <?php
-            $view = mysqli_query($koneksi, "SELECT * FROM halaman");
+            $view = mysqli_query($koneksi, "SELECT * FROM halaman order by id_halaman desc limit 4");
             while($a = mysqli_fetch_array($view)):
           ?>
           <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-4">
@@ -295,7 +377,7 @@
               <div class="card-body">
                 <h5 class="card-title"><a href=""><?php echo $a['judul_halaman']?></a></h5>
                 <p class="card-text"><?php echo $a['konten_halaman']?></p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                <!-- <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div> -->
               </div>
             </div>
           </div>
@@ -422,27 +504,28 @@
 
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
+
             <?php
-               $view = mysqli_query($koneksi, "SELECT * FROM aslab WHERE id_kategori_aslab = 1");
+               $view = mysqli_query($koneksi, "SELECT * FROM anggota WHERE id_kategori_anggota = 1");
                while($a = mysqli_fetch_array($view)):
             ?>
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="../img/aslab/<?php echo $a['foto_aslab'] ?>" class="testimonial-img" alt="">
-                  <h3><?php echo $a['nama_aslab'] ?></h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <img src="../img/anggota/<?php echo $a['foto_anggota'] ?>" class="testimonial-img" alt="">
+                  <h3><?php echo $a['nama_anggota'] ?></h3>
+                  <h4><?php echo $a['pekerjaan_anggota'] ?></h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    <?php echo $a['tahun_angkatan'] ?>
+                    <?php echo $a['pesankesan_anggota'] ?>
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
             <?php endwhile;?>
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -455,7 +538,7 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
@@ -470,7 +553,7 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
@@ -485,7 +568,7 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
@@ -500,7 +583,7 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
 
           </div>
           <div class="swiper-pagination"></div>
@@ -515,75 +598,77 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Gallery</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+          <p>Dokumentasi Semua Kegiatan Laboratorium</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Praktikum</li>
-              <li data-filter=".filter-card">Webinar</li>
-              <li data-filter=".filter-web"></li>
+              <?php
+                $kat = mysqli_query($koneksi, "SELECT * FROM KATEGORI_GALLERY");
+                while($k = mysqli_fetch_array($kat)):
+              ?>
+              <li data-filter=".filter-<?php echo $k['id_kategori_gallery']?>"><?php echo $k['nama_kategori_gallery']?></li>
+              <?php
+                endwhile;?>
+
+              <!-- <li data-filter=".filter-card">Webinar</li>
+              <li data-filter=".filter-web"></li> -->
             </ul>
           </div>
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
-
-          <?php
-            $berita= mysqli_query($koneksi, "SELECT * FROM berita JOIN kategori_berita ON berita.id_kategori_berita = kategori_berita.id_kategori_berita ORDER BY id_berita ASC");
-            while($a = mysqli_fetch_array($berita)):
-          ?>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img style="width: 800px; height: 600px;" src="../img/berita/<?php echo $a['gambar_berita']?>" class="img-fluid" alt="">
+              <img style="width: 800px; height: 600px;" src="../img/berita/60c0bf5d86e04.IMG-20191114-WA0003[1].jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4><?php echo $a['judul_berita']?></h4>
-                <p><?php echo $a['tanggalpost_berita']?></p>
+                <h4></h4>
+                <p></p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
-          </div>
-          <?php endwhile;?>
+          </div> -->
 
           <?php
-            $gallery = mysqli_query($koneksi, "SELECT * FROM gallery JOIN kategori_gallery ON gallery.id_kategori_gallery = kategori_gallery.id_kategori_gallery ORDER BY id_gallery ASC");
+            $gallery = mysqli_query($koneksi, "SELECT * FROM gallery JOIN kategori_gallery ON gallery.id_kategori_gallery = kategori_gallery.id_kategori_gallery ORDER BY id_gallery DESC Limit 12");
             while($b = mysqli_fetch_array($gallery)):
           ?>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $b['id_kategori_gallery'] ?>">
             <div class="portfolio-wrap">
-              <img style="width: 800px; height: 600px;" src="../img/gallery/<?php echo $b['gambar_gallery']?>" class="img-fluid" alt="">
+              <img style="width: 500px; height: 300px;" src="../img/gallery/<?php echo $b['gambar_gallery']?>" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
+                <h4><?php echo $b['caption_gallery'] ?></h4>
+                <p><?php echo date('d F, Y', strtotime($b['tanggal_gallery']))?></p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a> -->
+                  <a href="gallery-details.php?id=<?php echo $b['id_gallery']?>" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
           <?php endwhile;?>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <img style="width: 800px; height: 600px;" src="../img/gallery/" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
+                <h4></h4>
+                <p></p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="gallery-details.php?id=" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -596,7 +681,6 @@
               </div>
             </div>
           </div>
-
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
@@ -666,7 +750,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
@@ -679,30 +763,35 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Team</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+          <p>Anggota Pengurus Laboratorium Rekayasa Perangkat Lunak</p>
         </div>
 
         <div class="row">
 
+          <?php
+            $team = mysqli_query($koneksi, "SELECT * FROM ANGGOTA WHERE ID_KATEGORI_ANGGOTA = 2 OR id_kategori_anggota = 3");
+            while($t = mysqli_fetch_array($team)):
+          ?>
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.instagram.com/<?php echo $t['name_instagram']?>/"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4><?php echo $t['nama_anggota']?></h4>
+                <span><?php echo $t['jabatan_anggota']?></span>
               </div>
             </div>
           </div>
+          <?php endwhile; ?>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+          <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
                 <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
@@ -754,7 +843,7 @@
                 <span>Accountant</span>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
@@ -830,7 +919,7 @@
     <!-- End Pricing Section -->
 
     <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
+    <!-- <section id="faq" class="faq">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -847,7 +936,7 @@
               Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
             </p>
           </div>
-        </div><!-- End F.A.Q Item-->
+        </div>
 
         <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-5">
@@ -859,7 +948,7 @@
               Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
             </p>
           </div>
-        </div><!-- End F.A.Q Item-->
+        </div>
 
         <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <div class="col-lg-5">
@@ -871,7 +960,7 @@
               Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
             </p>
           </div>
-        </div><!-- End F.A.Q Item-->
+        </div>
 
         <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
           <div class="col-lg-5">
@@ -883,7 +972,7 @@
               Aperiam itaque sit optio et deleniti eos nihil quidem cumque. Voluptas dolorum accusantium sunt sit enim. Provident consequuntur quam aut reiciendis qui rerum dolorem sit odio. Repellat assumenda soluta sunt pariatur error doloribus fuga.
             </p>
           </div>
-        </div><!-- End F.A.Q Item-->
+        </div>
 
         <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
           <div class="col-lg-5">
@@ -895,10 +984,11 @@
               Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
             </p>
           </div>
-        </div><!-- End F.A.Q Item-->
+        </div>
 
       </div>
-    </section><!-- End F.A.Q Section -->
+    </section> -->
+    <!-- End F.A.Q Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -912,13 +1002,13 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
-              <h3>Vesperr</h3>
-              <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+              <h3>Laboratorium Rekayasa Perangkat Lunak</h3>
+              <p></p>
               <div class="social-links">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UCYwoDtm7igL5vTJyO9WIpsw" class="youtube"><i class="bi bi-youtube"></i></a>
                 <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="github"><i class="bi bi-github"></i></a>
               </div>
             </div>
           </div>
@@ -927,17 +1017,17 @@
             <div class="info">
               <div>
                 <i class="ri-map-pin-line"></i>
-                <p>A108 Adam Street<br>New York, NY 535022</p>
+                <a href="https://www.google.com/maps/place/Institut+Teknologi+Adhi+Tama+Surabaya/@-7.2904827,112.7797879,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipMULwR7YPeKzZjQ70cIgT6xX3J4-CNqfVmHuL5N!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMULwR7YPeKzZjQ70cIgT6xX3J4-CNqfVmHuL5N%3Dw86-h114-k-no!7i3024!8i4032!4m7!3m6!1s0x2dd7fa469f2b37b5:0x8d971ebe4e20a0d5!8m2!3d-7.290843!4d112.7791493!14m1!1BCgIgAQ"><p>Jl. Arief Rahman Hakim No.100<br>Klampis Ngasem, Kec. Sukolilo, Kota SBY, Jawa Timur 60117</p></a>
               </div>
 
               <div>
                 <i class="ri-mail-send-line"></i>
-                <p>info@example.com</p>
+                <a href="mailto:lab.rpl@itats.ac.id"><p>lab.rpl@itats.ac.id</p></a>
               </div>
 
               <div>
                 <i class="ri-phone-line"></i>
-                <p>+1 5589 55488 55s</p>
+                <p>Admin Laboratorium<br> <a href="https://wa.me/6281335608200">+6281335608200</a></p>
               </div>
 
             </div>
@@ -957,12 +1047,14 @@
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
+              <!-- <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div> -->
+              <div class="text-center">
+                <button type="submit" name="kirim">Send Message</button>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
 
@@ -979,22 +1071,22 @@
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 text-lg-left text-center">
           <div class="copyright">
-            &copy; Copyright <strong>Vesperr</strong>. All Rights Reserved
+            &copy; Copyright <strong>Lab RPL ITATS</strong>. All Rights Reserved
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="#">Love</a>
           </div>
         </div>
         <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
             <a href="index.php" class="scrollto">Home</a>
             <a href="#about" class="scrollto">About</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+            <a href="#faq">Berita</a>
+            <a href="#team">Team</a>
           </nav>
         </div>
       </div>

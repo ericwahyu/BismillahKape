@@ -5,6 +5,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Admin Laboratorium Rekayasa Perangkat Lunak</title>
 
+  <link href="../img/logo lap.jpg" rel="icon">
+
   <!-- General CSS Files -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -72,21 +74,21 @@
             <a href="index.html">Lab</a>
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
+            <!-- <li class="menu-header">Dashboard</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
                   <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li class="menu-header">Management</li>
               <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-table"></i> <span>Table</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="table.kategoriberita.php">Kategori Berita</a></li>
                   <li><a class="nav-link" href="table.kategorigallery.php">Kategori Gallery</a></li>
-                  <li class="active"><a class="nav-link" href="table.aslab.php">Aslab</a></li>
+                  <li class="active"><a class="nav-link" href="table.anggota.php">Anggota</a></li>
                   <li><a class="nav-link" href="table.berita.php">Berita</a></li>
                   <li><a class="nav-link" href="table.gallery.php">Gallery</a></li>
                   <li><a class="nav-link" href="table.halaman.php">Halaman</a></li>
@@ -99,28 +101,28 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Form Aslab</h1>
+            <h1>Form Anggota</h1>
           </div>
 
           <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
               <div class="card">
-                <form action="../model/modelAslab.php" method="post" enctype="multipart/form-data">
+                <form action="../model/modelAnggota.php" method="post" enctype="multipart/form-data">
                   <div class="card-header">
-                    <h4>Insert Aslab</h4>
+                    <h4>Insert Anggota</h4>
                   </div>
                   <div class="card-body">
                   <div class="mb-3">
-                      <label>Kategori Aslab</label>
+                      <label>Kategori Anggota</label>
                       <select class="form-control" name="idkategori">
-                        <option selected>-- Pilih Kategori Berita --</option required>
+                        <option selected>-- Pilih Kategori Anggota --</option required>
                         <?php
                           require_once('../koneksi.php');
 
-                          $view= mysqli_query($koneksi, "SELECT * FROM KATEGORI_ASLAB");
+                          $view= mysqli_query($koneksi, "SELECT * FROM KATEGORI_Anggota");
                           while($a = mysqli_fetch_array($view)):
                         ?>
-                        <option value="<?php echo $a['id_kategori_aslab']?>"><?php echo $a['kategori_aslab']?></option>
+                        <option value="<?php echo $a['id_kategori_anggota']?>"><?php echo $a['nama_kategori_anggota']?></option>
                         <?php endwhile; ?>
                       </select>
                     </div>
@@ -129,12 +131,28 @@
                       <input class="form-control" type="file" id="formFile" name="gambar">
                     </div>
                     <div class="mb-3">
-                      <label for="judul">Nama Aslab</label>
-                      <input type="input" class="form-control" name="nama" placeholder="Masukkan Nama Aslab" id="judul" required>
+                      <label for="nama">Nama Anggota</label>
+                      <input type="input" class="form-control" name="nama" placeholder="Masukkan Nama Anggota" id="nama" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="pesan">Jabatan Anggota</label>
+                      <input type="input" class="form-control" name="jabatan" placeholder="Masukkan Jabatan Anggota" id="jabatan" required>
                     </div>
                     <div class="mb-3">
                       <label for="tahun">Tahun Angkatan</label>
                       <input type="input" class="form-control" name="tahun" placeholder="Masukkan Tahun Angkatan Aslab" id="tahun" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="kerja">Pekerjaan Anggota</label>
+                      <input type="input" class="form-control" name="pekerjaan" placeholder="Masukkan pekerjaan Anggota" id="kerja">
+                    </div>
+                    <div class="mb-3">
+                      <label for="pesan">Pesan & kesan Anggota</label>
+                      <input type="input" class="form-control" name="pesan" placeholder="Masukkan Pesan Anggota" id="pesan">
+                    </div>
+                    <div class="mb-3">
+                      <label for="instagram">Name Instagram</label>
+                      <input type="input" class="form-control" name="instagram" placeholder="Masukkan Instagram Anggota" id="instagram">
                     </div>
                   </div>
                   <div class="card-footer text-right bg-whitesmoke br">

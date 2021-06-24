@@ -12,6 +12,7 @@
         $idkategori = $_POST['idkategori'];
         $caption = $_POST['caption'];
         $tanggal = $_POST['tanggal'];
+        $deskripsi = $_POST['deskripsi'];
 
         // pengecekan file
         if($gambarError == 4){
@@ -35,7 +36,7 @@
 
             //upload gambar
             move_uploaded_file($gambarTmp,'../img/gallery/'.$gambarNamenew);
-            $input = mysqli_query($koneksi,"INSERT INTO GALLERY VALUES ('', '$idkategori', '$caption', '$gambarNamenew', '$tanggal')");
+            $input = mysqli_query($koneksi,"INSERT INTO GALLERY VALUES ('', '$idkategori', '$caption', '$gambarNamenew', '$tanggal', '$deskripsi')");
             if($input){
                 echo "<script>
                         alert('Data berhasil di tambah !'); window.location='../pages/table.gallery.php ';
@@ -57,6 +58,7 @@
         $idkategori = $_POST['idkategori'];
         $caption = $_POST['caption'];
         $tanggal = $_POST['tanggal'];
+        $deskripsi = $_POST['deskripsi'];
 
         //ekstensi file lama
         $gambarLama = $_POST['gambarlama'];
@@ -86,7 +88,7 @@
         }
         //upload gambar baru
         move_uploaded_file($gambarTmp,'../img/gallery/'.$gambarNamenew);
-        $edit = mysqli_query($koneksi,"UPDATE GALLERY SET id_kategori_gallery='$idkategori', caption_gallery='$caption', gambar_gallery='$gambarNamenew', tanggal_gallery='$tanggal' WHERE id_gallery='$id'");
+        $edit = mysqli_query($koneksi,"UPDATE GALLERY SET id_kategori_gallery='$idkategori', caption_gallery='$caption', gambar_gallery='$gambarNamenew', tanggal_gallery='$tanggal', deskripsi_gallery='$deskripsi' WHERE id_gallery='$id'");
         if($edit){
             echo "<script>
                     alert('Data berhasil terupdate !'); window.location='../pages/table.gallery.php ';
