@@ -21,6 +21,7 @@
         $pekerjaan = $_POST['pekerjaan'];
         $pesan = $_POST['pesan'];
         $instagram = $_POST['instagram'];
+        $facebook = $_POST['facebook'];
 
         // pengecekan file
         if($gambarError == 4){
@@ -44,7 +45,7 @@
 
             //upload gambar
             move_uploaded_file($gambarTmp,'../img/anggota/'.$gambarNamenew);
-            $input = mysqli_query($koneksi,"INSERT INTO anggota VALUES ('', '$idkategori','$gambarNamenew','$nama','$jabatan', '$tahun', '$pekerjaan', '$pesan', '$instagram')");
+            $input = mysqli_query($koneksi,"INSERT INTO anggota VALUES ('', '$idkategori','$gambarNamenew','$nama','$jabatan', '$tahun', '$pekerjaan', '$pesan', '$instagram', '$facebook')");
                 if($input){
                     echo "<script>
                             alert('Data berhasil di tambah !'); window.location='../pages/table.anggota.php ';
@@ -68,6 +69,7 @@
         $pekerjaan = $_POST['pekerjaan'];
         $pesan = $_POST['pesan'];
         $instagram = $_POST['instagram'];
+        $facebook = $_POST['facebook'];
 
         //ekstensi file lama
         $gambarLama = $_POST['gambarlama'];
@@ -96,7 +98,7 @@
         }
         //upload gambar baru
         move_uploaded_file($gambarTmp,'../img/anggota/'.$gambarNamenew);
-        $edit = mysqli_query($koneksi,"UPDATE anggota SET foto_anggota='$gambarNamenew', id_kategori_anggota='$idkategori', nama_anggota='$nama', jabatan_anggota='$jabatan', tahun_angkatan='$tahun' , pekerjaan_anggota='$pekerjaan', pesankesan_anggota='$pesan', name_instagram='$instagram' WHERE id_anggota='$id'");
+        $edit = mysqli_query($koneksi,"UPDATE anggota SET foto_anggota='$gambarNamenew', id_kategori_anggota='$idkategori', nama_anggota='$nama', jabatan_anggota='$jabatan', tahun_angkatan='$tahun' , pekerjaan_anggota='$pekerjaan', pesankesan_anggota='$pesan', name_instagram='$instagram', name_facebook='$facebook' WHERE id_anggota='$id'");
             if($edit){
               echo "<script>
                 alert('Data berhasil terupdate !'); window.location='../pages/table.anggota.php ';

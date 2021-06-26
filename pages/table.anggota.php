@@ -53,10 +53,10 @@
             <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $name?> </div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
+              <!-- <div class="dropdown-title">Logged in 5 min ago</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
-              </a>
+              </a> -->
               <div class="dropdown-divider"></div>
               <a href="../model/modelLogin.php?logout" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -68,10 +68,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Admin Page</a>
+            <a href="table.anggota.php">Admin Page</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">Lab</a>
+            <a href="table.anggota.php">Lab</a>
           </div>
           <ul class="sidebar-menu">
             <!-- <li class="menu-header">Dashboard</li>
@@ -216,6 +216,10 @@
                   <label for="instagram" class="form-label">Instagram Anggota</label>
                   <input type="input" class="form-control" id="instagram" name="instagram" value="<?php echo $b['name_instagram']?>">
                 </div>
+                <div class="mb-3">
+                  <label for="facebook" class="form-label">Facebook Anggota</label>
+                  <input type="input" class="form-control" id="facebook" name="facebook" value="<?php echo $b['name_facebook']?>">
+                </div>
                 <div class="modal-footer bg-whitesmoke br">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary" name="update">Save Changes</button>
@@ -280,6 +284,11 @@
                       <td><h6>Nama Instagram</h6></td>
                       <td>:</td>
                       <td><?php echo $c['name_instagram']?></td>
+                    </tr>
+                    <tr>
+                      <td><h6>Nama Facebook</h6></td>
+                      <td>:</td>
+                      <td><?php echo $c['name_facebook']?></td>
                     </tr>
                   </table>
 

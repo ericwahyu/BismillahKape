@@ -53,10 +53,10 @@
             <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $name ?></div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
+              <!-- <div class="dropdown-title">Logged in 5 min ago</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
-              </a>
+              </a> -->
               <div class="dropdown-divider"></div>
               <a href="../model/modelLogin.php?logout" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -68,10 +68,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Admin Page</a>
+            <a href="table.berita.php">Admin Page</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">Lab</a>
+            <a href="table.berita.php">Lab</a>
           </div>
           <ul class="sidebar-menu">
             <!-- <li class="menu-header">Dashboard</li>
@@ -164,7 +164,7 @@
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Update Kategori Berita</h5>
+              <h5 class="modal-title">Update Berita</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -231,14 +231,24 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <div class="card-body" align="middle" line-height="1.5px">
                     <img src="../img/berita/<?php echo $c['gambar_berita'];?>" width="400"><br>
-                    <h3>Nama Kategori Berita</h3>
-                    <p><?php echo $c['nama_kategori_berita']?></p>
-                    <h3>Judul Berita</h3>
-                    <p><?php echo $c['judul_berita']?></p>
-                    <h3>Tanggal Post Berita</h3>
-                    <p><?php echo $c['tanggalpost_berita']?></p>
-                    <h3>Konten Berita</h3>
-                    <p><?php echo $c['konten_berita']?></p>
+                    <table>
+                      <tr>
+                        <td><h6>Nama Kategori Berita</h6></td>
+                        <td><?php echo $c['nama_kategori_berita']?></td>
+                      </tr>
+                      <tr>
+                        <td><h6>Judul Berita</h6></td>
+                        <td><?php echo $c['judul_berita']?></td>
+                      </tr>
+                      <tr>
+                        <td><h6>Tanggal Post Berita</h6></td>
+                        <td><?php echo $c['tanggalpost_berita']?></td>
+                      </tr>
+                      <tr>
+                        <td><h6>Konten Berita</h6></td>
+                        <td><?php echo $c['konten_berita']?></td>
+                      </tr>
+                    </table>
                   </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">

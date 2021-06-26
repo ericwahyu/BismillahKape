@@ -777,10 +777,10 @@
               <div class="member-img">
                 <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
+                  <a href="https://www.facebook.com/<?php echo $t['name_facebook']?>"><i class="bi bi-facebook"></i></a>
                   <a href="https://www.instagram.com/<?php echo $t['name_instagram']?>/"><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
                 </div>
               </div>
               <div class="member-info">
@@ -1005,10 +1005,10 @@
               <h3>Laboratorium Rekayasa Perangkat Lunak</h3>
               <p></p>
               <div class="social-links">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
                 <a href="https://www.youtube.com/channel/UCYwoDtm7igL5vTJyO9WIpsw" class="youtube"><i class="bi bi-youtube"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="github"><i class="bi bi-github"></i></a>
+                <!-- <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> -->
+                <a href="https://github.com/labrplitats/" class="github"><i class="bi bi-github"></i></a>
               </div>
             </div>
           </div>
@@ -1034,7 +1034,7 @@
           </div>
 
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="../Web-utama/forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>

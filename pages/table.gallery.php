@@ -53,10 +53,10 @@
             <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $name?> </div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
+              <!-- <div class="dropdown-title">Logged in 5 min ago</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
-              </a>
+              </a> -->
               <div class="dropdown-divider"></div>
               <a href="../model/modelLogin.php?logout" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -68,10 +68,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Admin Page</a>
+            <a href="table.gallery.php">Admin Page</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">Lab</a>
+            <a href="table.gallery.php">Lab</a>
           </div>
           <ul class="sidebar-menu">
             <!-- <li class="menu-header">Dashboard</li>
@@ -162,7 +162,7 @@
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Update Kategori Berita</h5>
+              <h5 class="modal-title">Update Gallery</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -229,12 +229,24 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <div class="card-body" align="middle" line-height="1.5px">
                   <img src="../img/gallery/<?php echo $c['gambar_gallery'];?>" width="400"><br>
-                    <h3>Nama Kategori Gallery</h3>
-                    <p><?php echo $c['nama_kategori_gallery']?></p>
-                    <h3>Caption Gallery</h3>
-                    <p><?php echo $c['caption_gallery']?></p>
-                    <h3>Tanggal Post Gallery</h3>
-                    <p><?php echo $c['tanggal_gallery']?></p>
+                    <table>
+                      <tr>
+                        <td><h6>Nama Kategori Gallery</h6></td>
+                        <td><?php echo $c['nama_kategori_gallery'] ?></td>
+                      </tr>
+                      <tr>
+                        <td><h6>Caption Gallery</h6></td>
+                        <td><?php echo $c['caption_gallery'] ?></td>
+                      </tr>
+                      <tr>
+                        <td><h6>Tanggal Gallery</h6></td>
+                        <td><?php echo $c['tanggal_gallery'] ?></td>
+                      </tr>
+                      <tr>
+                        <td><h6>Deskripsi Gallery</h6></td>
+                        <td><?php echo $c['deskripsi_gallery'] ?></td>
+                      </tr>
+                    </table>
                   </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">

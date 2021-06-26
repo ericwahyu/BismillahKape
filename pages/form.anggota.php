@@ -52,11 +52,11 @@
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $name;?></div></a>
-            <div class="dropdown-menu dropdown-menu-right">
+            <!-- <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in 5 min ago</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
-              </a>
+              </a> -->
               <div class="dropdown-divider"></div>
               <a href="../model/modelLogin.php?logout" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -68,10 +68,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Admin Page</a>
+            <a href="form.anggota.php">Admin Page</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">Lab</a>
+            <a href="form.anggota.php">Lab</a>
           </div>
           <ul class="sidebar-menu">
             <!-- <li class="menu-header">Dashboard</li>
@@ -153,6 +153,10 @@
                     <div class="mb-3">
                       <label for="instagram">Name Instagram</label>
                       <input type="input" class="form-control" name="instagram" placeholder="Masukkan Instagram Anggota" id="instagram">
+                    </div>
+                    <div class="mb-3">
+                      <label for="facebook">Name Facebook</label>
+                      <input type="input" class="form-control" name="facebook" placeholder="Masukkan facebook Anggota" id="instagram">
                     </div>
                   </div>
                   <div class="card-footer text-right bg-whitesmoke br">
