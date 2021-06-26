@@ -1,6 +1,6 @@
 <?php
 
-require_once("../koneksi.php");
+include("../koneksi.php");
 
   if(isset($_POST['login'])){
     $username = $_POST['username'];
@@ -11,17 +11,15 @@ require_once("../koneksi.php");
 
     if($user['username'] == $username && $user['password'] == $password){
       session_start();
-      include "../koneksi.php";
-
       $_SESSION['username'] = $user['username'];
       $_SESSION['name'] = $user['name'];
       echo "<script>
-          alert('Login Berhasil !'); window.location='../index.php?login';
+          alert('Login Berhasil !'); window.location='../index.php?admin&berita';
         </script>";
       return false;
     }else{
       echo "<script>
-          alert('Username dan Password Salah !'); window.location='../index.php';
+          alert('Username dan Password Salah !'); window.location='../index.php?admin';
         </script>";
       return false;
     }
@@ -45,7 +43,8 @@ require_once("../koneksi.php");
     }
 
   }else if(isset($_GET['logout'])){
-    session_unset();
+    session_start();
+    unset($_SESSION['username']);
     session_destroy();
     echo "<script>
             alert('Logout Berhasil !'); window.location='../index.php';
