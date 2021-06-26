@@ -1034,7 +1034,7 @@
           </div>
 
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="../Web-utama/forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="sendmail.php" method="post" role="form" class="email">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>

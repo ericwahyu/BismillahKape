@@ -1,11 +1,6 @@
 <?php
     include "../koneksi.php";
 
-    // if(isset($_GET['view'])){
-    //     $data = mysqli_query($koneksi, "SELECT * FROM HALAMAN");
-
-    //     header("location:pages/table.halaman.php?data=$data&admin=yes&table=yes");
-    //     return false;
     if(isset($_POST['insert'])){
         //ekstensi file
         $gambarName = $_FILES['gambar']['name'];

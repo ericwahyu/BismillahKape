@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #222222;
@@ -1439,6 +1439,9 @@ section {
 .contact .php-email-form .form-group {
   margin-bottom: 20px;
 }
+.contact .email .form-group {
+  margin-bottom: 20px;
+}
 
 .contact .php-email-form input, .contact .php-email-form textarea {
   border-radius: 0;
@@ -1452,6 +1455,14 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
+  background: #3498db;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+.contact .email button[type="submit"] {
   background: #3498db;
   border: 0;
   padding: 10px 24px;

@@ -40,6 +40,7 @@
   // echo $contact->send();
 
   if($_POST['kirim']){
+
     $admin = 'erickwahyu19@gmail.com'; //ganti email dg email admin (email penerima pesan)
 
     $nama	= htmlentities($_POST['name']);
