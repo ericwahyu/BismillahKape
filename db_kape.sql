@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Jun 2021 pada 16.20
+-- Waktu pembuatan: 26 Jun 2021 pada 08.56
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.4.16
 
@@ -36,24 +36,25 @@ CREATE TABLE `anggota` (
   `tahun_angkatan` year(4) NOT NULL,
   `pekerjaan_anggota` varchar(100) NOT NULL,
   `pesankesan_anggota` text NOT NULL,
-  `name_instagram` varchar(100) NOT NULL
+  `name_instagram` varchar(100) NOT NULL,
+  `name_facebook` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `anggota`
 --
 
-INSERT INTO `anggota` (`id_anggota`, `id_kategori_anggota`, `foto_anggota`, `nama_anggota`, `jabatan_anggota`, `tahun_angkatan`, `pekerjaan_anggota`, `pesankesan_anggota`, `name_instagram`) VALUES
-(8, 1, '60ceb4749ccf6.+62 858-9436-4025 20190722_003201 - Katsrur Rizqi Aviva.jpg', 'Katsrur Rizqi Aviva', 'Asisten laboratorium', 2015, 'Bekerja bidang IT-Technical Writer', 'menambah ilmu dan menambah pengalaman berorganisasi', ''),
-(9, 1, '60ceb49861865.20200809_163121 - Tri Swasono Himawan.jpg', 'Tri Swasono Himawan', 'Asisten laboratorium', 2013, 'Staff Operasional', 'Asik, menantang, belajar hal-hal baru diluar edukasi perkuliahan. Lebih perbarui soal hardware, biar dapat bereksperimen lebih. Terima kasih', ''),
-(10, 1, '60ceb7df33e21.IMG_20210511_130342 - Bagus Eko.jpg', 'Bagus Eko Prasetyo', 'Admin Lab', 2019, 'Programmer di Pusat Sistem Informasi ITATS', 'Semangat Menikmati Proses Belajar, Terkadang Indomie yang katanya instan nyatanya juga memerlukan beberapa proses. ', ''),
-(11, 1, '60cebb6db8990.IMG_20151114_152347 - Muhammad Rifqi Arifandi.jpg', 'Muhammad Rifqi Arifandi', 'Asisten laboratorium', 2013, 'Merintis usaha WiFi', 'Pesan : banyak mencari ilmu, Kesan : amazing', ''),
-(12, 2, '60d31a6a23982.IMG20210601161617_mh1622566231559_mr1622569613385_1_-removebg-preview.png', 'Fernanda Putra aditya', 'Asisten laboratorium', 2018, 'Fokus kuliah dengan segala laporan dan project, dan sedang bekerja di Snack Bowl Surabaya', 'Pesan : Untuk aslab periode berikutnya, semoga lebih baik dalam mengelola sistem di dalam Lab. RPL serta melaksanakan tugas dengan baik dan semoga Lab. RPL bisa lebih baik lagi dalam hal sistem praktikum dan pengelolaan infrastruktur di dalam Lab. RPL Kesan : To be honored menjadi asisten lab apalagi menjadi Asisten Lab. RPL. Proud of my self, karena bisa melaksanakan tugas dengan baik dan juga untuk teman teman aslab se periode sangat mantappu jiwa. Terimakasih untuk 2 periode yang sudah dilalui dengan sangat baik. Aku sayang kalian.', 'putraadityafernanda'),
-(13, 2, '60d318b6520a5.WhatsApp_Image_2021-06-19_at_23.24.19_-_Michael-removebg-preview.png', 'Michael Araona Wily', 'Koordinator Laboratorium', 2018, 'KP,KKN,Kerja , dll', 'Menyenangkan', ''),
-(14, 1, '60d31fd6167b0.IMG_20200823_110701 - Tommy Ferdian Hadimarta.jpg', 'Tommy Ferdian Hadimarta', 'Asisten laboratorium', 2014, 'Software Engginer', 'Senang bisa sharing ilmu dan punya banyak kenalan', ''),
-(15, 1, '60d3203b1d284.20201202_123229 - moch irfan.jpg', 'Moch. Irfan Chanafi', 'Asisten laboratorium', 2015, 'STAFF IT', 'Alhamdulillah bermanfaat', ''),
-(16, 2, '60d3212c1af5f.20181008_070736 - Sita Fara Yunanda.jpg', 'Sita Fara Yunanda', 'Asisten laboratorium', 2018, '', '', ''),
-(17, 2, '60d4867fae06a.Odila_Untuk lab - Odila Windy Astuti Halimaking.png', 'Odila Windy Astuti Halimaking', 'Asisten laboratorium', 2018, 'Mahasiswa Akhir ', 'Menjadi Aslab Bukan untuk balas dendam Tetapi Menjadikan lebih baik dari praktikum sebelumnya. ', '');
+INSERT INTO `anggota` (`id_anggota`, `id_kategori_anggota`, `foto_anggota`, `nama_anggota`, `jabatan_anggota`, `tahun_angkatan`, `pekerjaan_anggota`, `pesankesan_anggota`, `name_instagram`, `name_facebook`) VALUES
+(8, 1, '60ceb4749ccf6.+62 858-9436-4025 20190722_003201 - Katsrur Rizqi Aviva.jpg', 'Katsrur Rizqi Aviva', 'Asisten laboratorium', 2015, 'Bekerja bidang IT-Technical Writer', 'menambah ilmu dan menambah pengalaman berorganisasi', '', ''),
+(9, 1, '60ceb49861865.20200809_163121 - Tri Swasono Himawan.jpg', 'Tri Swasono Himawan', 'Asisten laboratorium', 2013, 'Staff Operasional', 'Asik, menantang, belajar hal-hal baru diluar edukasi perkuliahan. Lebih perbarui soal hardware, biar dapat bereksperimen lebih. Terima kasih', '', ''),
+(10, 1, '60ceb7df33e21.IMG_20210511_130342 - Bagus Eko.jpg', 'Bagus Eko Prasetyo', 'Admin Lab', 2019, 'Programmer di Pusat Sistem Informasi ITATS', 'Semangat Menikmati Proses Belajar, Terkadang Indomie yang katanya instan nyatanya juga memerlukan beberapa proses. ', '', ''),
+(11, 1, '60cebb6db8990.IMG_20151114_152347 - Muhammad Rifqi Arifandi.jpg', 'Muhammad Rifqi Arifandi', 'Asisten laboratorium', 2013, 'Merintis usaha WiFi', 'Pesan : banyak mencari ilmu, Kesan : amazing', '', ''),
+(12, 2, '60d31a6a23982.IMG20210601161617_mh1622566231559_mr1622569613385_1_-removebg-preview.png', 'Fernanda Putra aditya', 'Asisten laboratorium', 2018, 'Fokus kuliah dengan segala laporan dan project, dan sedang bekerja di Snack Bowl Surabaya', 'Pesan : Untuk aslab periode berikutnya, semoga lebih baik dalam mengelola sistem di dalam Lab. RPL serta melaksanakan tugas dengan baik dan semoga Lab. RPL bisa lebih baik lagi dalam hal sistem praktikum dan pengelolaan infrastruktur di dalam Lab. RPL Kesan : To be honored menjadi asisten lab apalagi menjadi Asisten Lab. RPL. Proud of my self, karena bisa melaksanakan tugas dengan baik dan juga untuk teman teman aslab se periode sangat mantappu jiwa. Terimakasih untuk 2 periode yang sudah dilalui dengan sangat baik. Aku sayang kalian.', 'putraadityafernanda', ''),
+(13, 2, '60d318b6520a5.WhatsApp_Image_2021-06-19_at_23.24.19_-_Michael-removebg-preview.png', 'Michael Araona Wily', 'Koordinator Laboratorium', 2018, 'KP,KKN,Kerja , dll', 'Menyenangkan', '', ''),
+(14, 1, '60d31fd6167b0.IMG_20200823_110701 - Tommy Ferdian Hadimarta.jpg', 'Tommy Ferdian Hadimarta', 'Asisten laboratorium', 2014, 'Software Engginer', 'Senang bisa sharing ilmu dan punya banyak kenalan', '', ''),
+(15, 1, '60d3203b1d284.20201202_123229 - moch irfan.jpg', 'Moch. Irfan Chanafi', 'Asisten laboratorium', 2015, 'STAFF IT', 'Alhamdulillah bermanfaat', '', ''),
+(16, 2, '60d3212c1af5f.20181008_070736 - Sita Fara Yunanda.jpg', 'Sita Fara Yunanda', 'Asisten laboratorium', 2018, '', '', '', ''),
+(17, 2, '60d4867fae06a.Odila_Untuk lab - Odila Windy Astuti Halimaking.png', 'Odila Windy Astuti Halimaking', 'Asisten laboratorium', 2018, 'Mahasiswa Akhir ', 'Menjadi Aslab Bukan untuk balas dendam Tetapi Menjadikan lebih baik dari praktikum sebelumnya. ', '', '');
 
 -- --------------------------------------------------------
 
