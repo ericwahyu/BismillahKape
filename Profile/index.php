@@ -769,7 +769,76 @@
         <div class="row">
 
           <?php
-            $team = mysqli_query($koneksi, "SELECT * FROM ANGGOTA WHERE ID_KATEGORI_ANGGOTA = 2 OR id_kategori_anggota = 3");
+            $team = mysqli_query($koneksi, "SELECT * FROM ANGGOTA WHERE id_kategori_anggota = 3");
+            while($t = mysqli_fetch_array($team)):
+          ?>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
+                <div class="social">
+                  <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
+                  <a href="https://www.facebook.com/<?php echo $t['name_facebook']?>"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/<?php echo $t['name_instagram']?>/"><i class="bi bi-instagram"></i></a>
+                  <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
+                </div>
+              </div>
+              <div class="member-info">
+                <h4><?php echo $t['nama_anggota']?></h4>
+                <span><?php echo $t['jabatan_anggota']?></span>
+              </div>
+            </div>
+          </div>
+          <?php endwhile; ?>
+
+          <?php
+            $team = mysqli_query($koneksi, "SELECT * FROM ANGGOTA WHERE jabatan_anggota like '%koor%' and id_kategori_anggota = 2");
+            while($t = mysqli_fetch_array($team)):
+          ?>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
+                <div class="social">
+                  <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
+                  <a href="https://www.facebook.com/<?php echo $t['name_facebook']?>"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/<?php echo $t['name_instagram']?>/"><i class="bi bi-instagram"></i></a>
+                  <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
+                </div>
+              </div>
+              <div class="member-info">
+                <h4><?php echo $t['nama_anggota']?></h4>
+                <span><?php echo $t['jabatan_anggota']?></span>
+              </div>
+            </div>
+          </div>
+          <?php endwhile; ?>
+
+          <?php
+            $team = mysqli_query($koneksi, "SELECT * FROM ANGGOTA WHERE jabatan_anggota like '%admin%' and id_kategori_anggota = 2 ");
+            while($t = mysqli_fetch_array($team)):
+          ?>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
+                <div class="social">
+                  <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
+                  <a href="https://www.facebook.com/<?php echo $t['name_facebook']?>"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/<?php echo $t['name_instagram']?>/"><i class="bi bi-instagram"></i></a>
+                  <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
+                </div>
+              </div>
+              <div class="member-info">
+                <h4><?php echo $t['nama_anggota']?></h4>
+                <span><?php echo $t['jabatan_anggota']?></span>
+              </div>
+            </div>
+          </div>
+          <?php endwhile; ?>
+
+          <?php
+            $team = mysqli_query($koneksi, "SELECT * FROM ANGGOTA WHERE jabatan_anggota like '%asisten%' and id_kategori_anggota = 2 ");
             while($t = mysqli_fetch_array($team)):
           ?>
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
