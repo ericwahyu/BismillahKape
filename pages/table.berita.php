@@ -138,9 +138,9 @@
                         <td><?php echo $a['tanggalpost_berita'];?></td>
                         <td><?php echo $sub_kalimat = substr($a['konten_berita'],0,25)."...";?></td>
                         <td class="d-flex m-2">
-                          <a href="#" class="badge badge-warning" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_berita'];?>"><i class="fas fa-edit"></i>  Ubah</a>
-                          <a href="#" class="badge badge-danger" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelBerita.php?id=<?php echo $a['id_berita'];?>&delete&gambarlama=<?php echo $a['gambar_berita'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
-                          <a href="#" class="badge badge-success" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_berita'];?>"><i class="fas fa-info-circle"></i>  Detail</a>
+                          <a href="#" class="badge badge-warning mr-2" style="text-decoration:none" data-toggle="modal" data-target="#modalupdate<?php echo $a['id_berita'];?>"><i class="fas fa-edit"></i>  Ubah</a>
+                          <a href="#" class="badge badge-danger mr-2" style="text-decoration:none" data-confirm="Realy?|Anda yakin ingin menghapus data ini !" data-confirm-yes="window.location=' ../model/modelBerita.php?id=<?php echo $a['id_berita'];?>&delete&gambarlama=<?php echo $a['gambar_berita'];?>'"><i class="fas fa-trash-alt"></i>  Hapus</a>
+                          <a href="#" class="badge badge-success mr-2" style="text-decoration:none" data-toggle="modal" data-target="#modaldetail<?php echo $a['id_berita'];?>"><i class="fas fa-info-circle"></i>  Detail</a>
                         </td>
                       </tr>
                       <?php $index++; endwhile; ?>
