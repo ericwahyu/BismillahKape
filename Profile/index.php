@@ -375,7 +375,7 @@
           <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-4">
             <div class="card" style="background-image: url('../img/halaman/<?php echo $a['gambar_halaman']?>');" data-aos="fade-up" data-aos-delay="200">
               <div class="card-body">
-                <h5 class="card-title"><a href=""><?php echo $a['judul_halaman']?></a></h5>
+                <h5 class="card-title"><?php echo $a['judul_halaman']?></a></h5>
                 <p class="card-text"><?php echo $a['konten_halaman']?></p>
                 <!-- <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div> -->
               </div>
@@ -1102,7 +1102,7 @@
             </div>
           </div>
 
-          <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+          <!-- <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
             <form action="sendmail.php" method="post" role="form" class="email">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -1116,16 +1116,16 @@
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <!-- <div class="my-3">
+              <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div> -->
+              </div>
               <div class="text-center">
                 <button type="submit" name="kirim">Send Message</button>
               </div>
             </form>
-          </div>
+          </div> -->
 
         </div>
 
