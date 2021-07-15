@@ -25,6 +25,7 @@
   <script src="../assets/ckeditor/ckeditor.js"></script>
 </head>
 <?php
+  include "../labinfor_landingpage.php";
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>
@@ -124,8 +125,6 @@
                         <th></th>
                       </tr>
                       <?php
-                        include "../koneksi.php";
-
                         $view= mysqli_query($koneksi, "SELECT * FROM berita JOIN kategori_berita ON berita.id_kategori_berita = kategori_berita.id_kategori_berita ORDER BY id_berita ASC");
                         $index=1;
                         while($a = mysqli_fetch_array($view)):
@@ -234,18 +233,22 @@
                     <table>
                       <tr>
                         <td><h6>Nama Kategori Berita</h6></td>
+                        <td>:</td>
                         <td><?php echo $c['nama_kategori_berita']?></td>
                       </tr>
                       <tr>
                         <td><h6>Judul Berita</h6></td>
+                        <td>:</td>
                         <td><?php echo $c['judul_berita']?></td>
                       </tr>
                       <tr>
                         <td><h6>Tanggal Post Berita</h6></td>
+                        <td>:</td>
                         <td><?php echo $c['tanggalpost_berita']?></td>
                       </tr>
                       <tr>
                         <td><h6>Konten Berita</h6></td>
+                        <td>:</td>
                         <td><?php echo $c['konten_berita']?></td>
                       </tr>
                     </table>

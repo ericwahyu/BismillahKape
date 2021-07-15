@@ -25,6 +25,7 @@
   <script src="../assets/ckeditor/ckeditor.js"></script>
 </head>
 <?php
+  include "../labinfor_landingpage.php";
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>
@@ -123,7 +124,6 @@
                         <th>Aksi</th>
                       </tr>
                       <?php
-                        include "../koneksi.php";
                         $view = mysqli_query($koneksi, "SELECT * FROM gallery JOIN kategori_gallery ON gallery.id_kategori_gallery = kategori_gallery.id_kategori_gallery ORDER BY id_gallery ASC");
                         $index=1;
                         while($a = mysqli_fetch_array($view)):
@@ -232,18 +232,22 @@
                     <table>
                       <tr>
                         <td><h6>Nama Kategori Gallery</h6></td>
+                        <td>:</td>
                         <td><?php echo $c['nama_kategori_gallery'] ?></td>
                       </tr>
                       <tr>
                         <td><h6>Caption Gallery</h6></td>
+                        <td>:</td>
                         <td><?php echo $c['caption_gallery'] ?></td>
                       </tr>
                       <tr>
                         <td><h6>Tanggal Gallery</h6></td>
+                        <td>:</td>
                         <td><?php echo $c['tanggal_gallery'] ?></td>
                       </tr>
                       <tr>
                         <td><h6>Deskripsi Gallery</h6></td>
+                        <td>:</td>
                         <td><?php echo $c['deskripsi_gallery'] ?></td>
                       </tr>
                     </table>

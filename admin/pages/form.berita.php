@@ -25,6 +25,7 @@
   <script src="../assets/ckeditor/ckeditor.js"></script>
 </head>
 <?php
+  include "../labinfor_landingpage.php";
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>
@@ -121,8 +122,6 @@
                       <select class="form-control" name="idkategori">
                         <option selected>-- Pilih Kategori Berita --</option required>
                         <?php
-                          require_once('../koneksi.php');
-
                           $view= mysqli_query($koneksi, "SELECT * FROM KATEGORI_BERITA");
                           while($a = mysqli_fetch_array($view)):
                         ?>

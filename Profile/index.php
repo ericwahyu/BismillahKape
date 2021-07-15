@@ -37,13 +37,13 @@
 </head>
 
 <body>
-  <?php include "../admin/koneksi.php";?>
+  <?php include "../admin/labinfor_landingpage.php";?>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.php"><img src="../admin/img/logo lap.jpg" alt="" class=""></a></h1>
+        <h1><a href="index.php"><img src="assets/img/logo lap.jpg" alt="" class=""></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
@@ -97,7 +97,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src="../admin/assets/img/hero-img.png" class="img-fluid animated" alt="">
+          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>

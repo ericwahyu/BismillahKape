@@ -25,6 +25,7 @@
   <script src="../assets/ckeditor/ckeditor.js"></script>
 </head>
 <?php
+  include "../labinfor_landingpage.php";
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>

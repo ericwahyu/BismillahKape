@@ -1,6 +1,6 @@
 <?php
 
-include("../koneksi.php");
+include("../labinfor_landingpage.php");
 
   if(isset($_POST['login'])){
     $username = $_POST['username'];

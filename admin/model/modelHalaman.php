@@ -1,5 +1,5 @@
 <?php
-    include "../koneksi.php";
+    include "../labinfor_landingpage.php";
 
     // if(isset($_GET['view'])){
     //     $data = mysqli_query($koneksi, "SELECT * FROM HALAMAN");

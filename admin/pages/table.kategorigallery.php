@@ -25,6 +25,7 @@
   <script src="../assets/ckeditor/ckeditor.js"></script>
 </head>
 <?php
+  include "../labinfor_landingpage.php";
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>
@@ -119,8 +120,6 @@
                         <th>Aksi</th>
                       </tr>
                       <?php
-                        include "../koneksi.php";
-
                         $view = mysqli_query($koneksi,"SELECT * FROM kategori_gallery");
                         $index=1;
                         while($a = mysqli_fetch_array($view)):

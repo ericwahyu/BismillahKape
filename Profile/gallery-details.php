@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../img/logo lap.jpg" rel="icon">
+  <link href="assets/img/logo lap.jpg" rel="icon">
   <link href="../img/logo lap.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

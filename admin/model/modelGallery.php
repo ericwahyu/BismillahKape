@@ -1,5 +1,5 @@
 <?php
-    include "../koneksi.php";
+    include "../labinfor_landingpage.php";
 
     if(isset($_POST['insert'])){
         //ekstensi file

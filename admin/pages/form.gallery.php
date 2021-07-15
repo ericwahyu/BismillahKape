@@ -25,6 +25,7 @@
   <script src="../assets/ckeditor/ckeditor.js"></script>
 </head>
 <?php
+  include "../labinfor_landingpage.php";
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>
@@ -121,8 +122,6 @@
                       <select class="form-control" name="idkategori">
                         <option selected>-- Pilih Kategori Gallery --</option>
                         <?php
-                          require_once('../koneksi.php');
-
                           $select = mysqli_query($koneksi, "SELECT * FROM KATEGORI_GALLERY");
                           while($a = mysqli_fetch_array($select)):
                         ?>
