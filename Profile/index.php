@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../img/logo lap.jpg" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/logo lap.jpg" rel="icon">
+  <link href="../admin/img/logo lap.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -37,13 +37,13 @@
 </head>
 
 <body>
-  <?php include "../koneksi.php";?>
+  <?php include "../admin/koneksi.php";?>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.php"><img src="../img/logo lap.jpg" alt="" class=""></a></h1>
+        <h1><a href="index.php"><img src="../admin/img/logo lap.jpg" alt="" class=""></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
@@ -97,7 +97,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+          <img src="../admin/assets/img/hero-img.png" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
@@ -373,7 +373,7 @@
             while($a = mysqli_fetch_array($view)):
           ?>
           <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-4">
-            <div class="card" style="background-image: url('../img/halaman/<?php echo $a['gambar_halaman']?>');" data-aos="fade-up" data-aos-delay="200">
+            <div class="card" style="background-image: url('../admin/img/halaman/<?php echo $a['gambar_halaman']?>');" data-aos="fade-up" data-aos-delay="200">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $a['judul_halaman']?></a></h5>
                 <p class="card-text"><?php echo $a['konten_halaman']?></p>
@@ -512,7 +512,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="../img/anggota/<?php echo $a['foto_anggota'] ?>" class="testimonial-img" alt="">
+                  <img src="../admin/img/anggota/<?php echo $a['foto_anggota'] ?>" class="testimonial-img" alt="">
                   <h3><?php echo $a['nama_anggota'] ?></h3>
                   <h4><?php echo $a['pekerjaan_anggota'] ?></h4>
                   <p>
@@ -640,7 +640,7 @@
           ?>
           <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $b['id_kategori_gallery'] ?>">
             <div class="portfolio-wrap">
-              <img style="width: 500px; height: 300px;" src="../img/gallery/<?php echo $b['gambar_gallery']?>" class="img-fluid" alt="">
+              <img style="width: 500px; height: 300px;" src="../admin/img/gallery/<?php echo $b['gambar_gallery']?>" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><?php echo $b['caption_gallery'] ?></h4>
                 <p><?php echo date('d F, Y', strtotime($b['tanggal_gallery']))?></p>
@@ -775,7 +775,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
+                <img style="width: 500px; height: 355px;" src="../admin/img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
                 <div class="social">
                   <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
                   <a href="https://www.facebook.com/<?php echo $t['name_facebook']?>"><i class="bi bi-facebook"></i></a>
@@ -798,7 +798,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
+                <img style="width: 500px; height: 355px;" src="../admin/img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
                 <div class="social">
                   <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
                   <a href="https://www.facebook.com/<?php echo $t['name_facebook']?>"><i class="bi bi-facebook"></i></a>
@@ -821,7 +821,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
+                <img style="width: 500px; height: 355px;" src="../admin/img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
                 <div class="social">
                   <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
                   <a href="https://www.facebook.com/<?php echo $t['name_facebook']?>"><i class="bi bi-facebook"></i></a>
@@ -844,7 +844,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img style="width: 500px; height: 355px;" src="../img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
+                <img style="width: 500px; height: 355px;" src="../admin/img/anggota/<?php echo $t['foto_anggota'] ?>" class="img-fluid" alt="">
                 <div class="social">
                   <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
                   <a href="https://www.facebook.com/<?php echo $t['name_facebook']?>"><i class="bi bi-facebook"></i></a>

@@ -14,12 +14,12 @@ include("../koneksi.php");
       $_SESSION['username'] = $user['username'];
       $_SESSION['name'] = $user['name'];
       echo "<script>
-          alert('Login Berhasil !'); window.location='../index.php?admin&berita';
+          alert('Login Berhasil !'); window.location='../index.php?admin';
         </script>";
       return false;
     }else{
       echo "<script>
-          alert('Username dan Password Salah !'); window.location='../index.php?admin';
+          alert('Username dan Password Salah !'); window.location='../index.php';
         </script>";
       return false;
     }

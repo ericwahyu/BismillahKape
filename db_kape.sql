@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Jun 2021 pada 08.56
+-- Waktu pembuatan: 15 Jul 2021 pada 07.11
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.4.16
 
@@ -54,7 +54,10 @@ INSERT INTO `anggota` (`id_anggota`, `id_kategori_anggota`, `foto_anggota`, `nam
 (14, 1, '60d31fd6167b0.IMG_20200823_110701 - Tommy Ferdian Hadimarta.jpg', 'Tommy Ferdian Hadimarta', 'Asisten laboratorium', 2014, 'Software Engginer', 'Senang bisa sharing ilmu dan punya banyak kenalan', '', ''),
 (15, 1, '60d3203b1d284.20201202_123229 - moch irfan.jpg', 'Moch. Irfan Chanafi', 'Asisten laboratorium', 2015, 'STAFF IT', 'Alhamdulillah bermanfaat', '', ''),
 (16, 2, '60d3212c1af5f.20181008_070736 - Sita Fara Yunanda.jpg', 'Sita Fara Yunanda', 'Asisten laboratorium', 2018, '', '', '', ''),
-(17, 2, '60d4867fae06a.Odila_Untuk lab - Odila Windy Astuti Halimaking.png', 'Odila Windy Astuti Halimaking', 'Asisten laboratorium', 2018, 'Mahasiswa Akhir ', 'Menjadi Aslab Bukan untuk balas dendam Tetapi Menjadikan lebih baik dari praktikum sebelumnya. ', '', '');
+(17, 2, '60d4867fae06a.Odila_Untuk lab - Odila Windy Astuti Halimaking.png', 'Odila Windy Astuti Halimaking', 'Asisten laboratorium', 2018, 'Mahasiswa Akhir ', 'Menjadi Aslab Bukan untuk balas dendam Tetapi Menjadikan lebih baik dari praktikum sebelumnya. ', '', ''),
+(18, 3, '60d8696ae4178.IMG-20210626-WA0003[1].jpg', 'Muchamad Kurniawan, S.Kom., M.Kom.', 'Kepala Laboratorium', 2015, 'Dosen Teknik informatika', '', '', ''),
+(19, 1, '60d86b4e2eae3.68344327-44C8-4DF6-B19E-6CE7B4043DDF - Hilmy Maulana.jpeg', 'Hilmy Maulana Ilmi', 'Asisten laboratorium', 2017, 'Mengerjakan skripsi dan KP ', 'Semangat untuk generasi penerus yang menjadi asisten lab dan jangan lupa untuk selalu rendah hati ya. ', '', ''),
+(20, 2, '60d86de6b99cf.IMG_20210624_205418_-_Achmad_Fadlan_Bhahreisy-removebg-preview.png', 'Achmad Fadlan Bhahreisy', 'Admin Laboratorium', 2018, 'Makan, tidur, belajar, udah.', 'Hmm apa ya?, Gatau saya, entahlah hanya martin yang tau', '', '');
 
 -- --------------------------------------------------------
 
@@ -233,23 +236,19 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Eric WA', 'ericwa', 'ericwahyu19@gmail.com', '2021-05-10 13:54:07', '123', NULL, NULL, NULL),
-(3, 'wahyu wah', 'wahyuwa', 'erickwahyu19@gmail.com', NULL, '1234', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`) VALUES
+(1, 'Eric WA', 'ericwa', 'ericwahyu19@gmail.com', '123'),
+(3, 'wahyu wah', 'wahyuwa', 'erickwahyu19@gmail.com', '1234');
 
 --
 -- Indexes for dumped tables
@@ -326,7 +325,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `berita`
